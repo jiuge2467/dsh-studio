@@ -1,0 +1,10 @@
+node_modules/
+lib/
+dist/
+*.tsbuildinfo
+.pnpm-store/
+.cache/
+coverage/
+.playwright-mcp/
+tmp/
+*.log

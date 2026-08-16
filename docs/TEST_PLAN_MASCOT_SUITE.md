@@ -1,8 +1,8 @@
 # QA Test Plan & Verification Matrix: DSH 超级增强套件 (dsh-mascot-suite)
 
-> **文档性质**：QA Test Plan & Verification Specification  
-> **责任角色**：🔍 QA（测试工程师）  
-> **当前阶段**：Phase 4: Test & Verify 方案规划  
+> **文档性质**：QA Test Plan & Verification Specification
+> **责任角色**：🔍 QA（测试工程师）
+> **当前阶段**：Phase 4: Test & Verify 方案规划
 
 ---
 

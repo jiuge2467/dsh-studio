@@ -1,9 +1,9 @@
 # System Architecture & Fusion Spec: DSH 超级增强套件 (dsh-mascot-suite)
 
-> **文档性质**：Architecture & Technical Specification  
-> **责任角色**：🏗️ ARCH（系统架构师）  
-> **关联源码**：`dsh-web-ui/` + `dsh-mascot-pet/`  
-> **当前阶段**：Phase 2: Arch & DB (架构可行性与融合设计)  
+> **文档性质**：Architecture & Technical Specification
+> **责任角色**：🏗️ ARCH（系统架构师）
+> **关联源码**：`dsh-web-ui/` + `dsh-mascot-pet/`
+> **当前阶段**：Phase 2: Arch & DB (架构可行性与融合设计)
 
 ---
 

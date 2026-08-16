@@ -1,9 +1,9 @@
 # PRD: DeepSeek Harness 增强套件与 Q 版小鲸鱼姬融合插件 (dsh-mascot-suite)
 
-> **文档性质**：Product Requirement Document (PRD)  
-> **责任角色**：🎯 PM（产品经理）  
-> **融合目标**：`dsh-web-ui`（生产力工具箱 + 皮肤中心）+ `dsh-mascot-pet`（Q版小鲸鱼姬桌宠与摸鱼中心）  
-> **当前阶段**：Phase 1: PRD & Scope (方案规划与可行性审核)  
+> **文档性质**：Product Requirement Document (PRD)
+> **责任角色**：🎯 PM（产品经理）
+> **融合目标**：`dsh-web-ui`（生产力工具箱 + 皮肤中心）+ `dsh-mascot-pet`（Q版小鲸鱼姬桌宠与摸鱼中心）
+> **当前阶段**：Phase 1: PRD & Scope (方案规划与可行性审核)
 
 ---
 
@@ -38,15 +38,15 @@
 
 ## 3. EARS 验收标准 (Acceptance Criteria)
 
-- **[EARS-1: Q版形象锁定]**  
-  *WHEN* 启用桌面伴侣  
+- **[EARS-1: Q版形象锁定]**
+  *WHEN* 启用桌面伴侣
   *THEN* 屏幕右下角展示的是高保真 Q 版女仆小鲸鱼姬（带气泡互动与四态表情），而非像素方块贴图。
-- **[EARS-2: 设置弹窗双入口]**  
-  *WHEN* 用户打开 DSH 设置弹窗  
+- **[EARS-2: 设置弹窗双入口]**
+  *WHEN* 用户打开 DSH 设置弹窗
   *THEN* 左侧导航栏应同时包含独立的【小鲸鱼姬】专属设置卡片与【插件配置】/【皮肤中心】。
-- **[EARS-3: 生产力插件齐备]**  
-  *WHEN* 挂载聚合插件后  
+- **[EARS-3: 生产力插件齐备]**
+  *WHEN* 挂载聚合插件后
   *THEN* 任务看板、Git 图谱、实时 TPS、移动端远程、SSH 面板均可正常打开且无报错。
-- **[EARS-4: 侧边栏无冲突]**  
-  *WHEN* 用户使用右侧工作台  
+- **[EARS-4: 侧边栏无冲突]**
+  *WHEN* 用户使用右侧工作台
   *THEN* 现有的 `DSH-better-sidebar`（含 Agent 技能工作台）保持主控，旧版右侧面板不发生重叠抢占。

@@ -1,8 +1,8 @@
 # Architecture Design: DSH Better-Sidebar Agent 技能与规则工作台 (dsh-better-sidebar-skills)
 
-> **文档版本**：v1.0.0 (Phase 2: Arch & DB)  
-> **责任角色**：🏗️ ARCH（系统架构师）  
-> **状态**：Spec 已锁定，待评审进入 DEV 阶段  
+> **文档版本**：v1.0.0 (Phase 2: Arch & DB)
+> **责任角色**：🏗️ ARCH（系统架构师）
+> **状态**：Spec 已锁定，待评审进入 DEV 阶段
 
 ---
 

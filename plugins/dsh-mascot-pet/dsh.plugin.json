@@ -1,0 +1,21 @@
+{
+  "id": "dsh-external/dsh-mascot-pet",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "description": "DeepSeek 小鲸鱼姬桌宠与摸鱼伴侣插件 (Chibi Whale Maid Desktop Companion & Relaxation Hub for DeepSeek Harness)",
+  "engines": {
+    "dsh": ">=0.0.1"
+  },
+  "contributes": {
+    "tools": [
+      {
+        "name": "pet_interact",
+        "description": "与桌宠小鲸鱼姬互动：设置情绪姿态、气泡台词或触发摸鱼小游戏提示"
+      }
+    ],
+    "skills": []
+  },
+  "client": {
+    "main": "./lib/client.js"
+  }
+}

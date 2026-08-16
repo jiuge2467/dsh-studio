@@ -1,22 +1,20 @@
 # Current Session Snapshot
 
-- **Project**: DeepSeek Harness - Modular Fusion & Native MCP Multi-Source Manager
-- **Phase**: Phase 3/4/5 DEV & QA & OPS Completed
-- **Role**: DEV (全栈工程师) & QA & OPS
-- **Service Status**: Running at `http://127.0.0.1:3080` / `0.0.0.0:3080` (Healthy 200 OK)
-- **Accomplished Highlights**:
-  - 1. **热门预设横向滚轮与全量浏览支持 (COMPLETED & VERIFIED)**:
-    - 移除了预设数量截断，展示全量 10 个精选官方预设（GitHub, SQLite, Web Fetch, Brave Search, Puppeteer, PostgreSQL, Memory, Filesystem, Everything, Git）。
-    - 支持 **鼠标滚轮横向滚动 (onWheel 智能映射)**：鼠标悬停在预设条上任意滚动滚轮即可丝滑左右翻动。
-    - 添加了两侧紧凑型 **【‹】/【›】快捷滚动按键** 与自适应纤细滚动条。
-  - 2. **MCP 多源管理中心 (`dsh-better-sidebar-mcp`)**:
-    - 自动聚合扫描 Workspace (`mcp.json`, `.vscode/mcp.json`, `.cursor/mcp.json`, `.agents/mcp_config.json`) 及全局环境 (Claude Desktop, Cursor, Antigravity/Gemini, `~/.dsh/mcp.json`)。
-    - 纯矢量 SVG 统一图标规范（DSH Outline 风格，无 Emoji 占位）。
-    - 单工具在线执行沙箱（Tool Tester Modal），入参 Schema 可视化与毫秒级延迟测速。
-    - 批量 JSON 导入与原子化保存/删除/启用禁用切换。
-  - 3. **自动化测试与端到端验证**:
-    - Vitest 10/10 单元测试全绿通过。
-    - 浏览器实机验证与滚轮测试完成。
-- **Deliverables**:
-  - 📋 [docs/PRD_MCP_MANAGER.md](file:///e:/ccode/vscode_code/个人项目/deepseek-harness-master/docs/PRD_MCP_MANAGER.md)
-  - 📦 [dsh-better-sidebar-mcp](file:///e:/ccode/vscode_code/个人项目/deepseek-harness-master/dsh-better-sidebar-mcp)
+- **Project**: DeepSeek Harness Monorepo (with `plugins/` unified architecture)
+- **Phase**: Complete (Phase 6 Release Done)
+- **Role**: OPS & System Architect & DEV
+- **Latest Milestones Completed**:
+  1. **零食投喂 CD 体系与饥饿情绪系统** (`MascotAffectionStore.ts` & `FeedingCenter.tsx`)：
+     - 4 款零食差异化基础 CD（30s / 60s / 90s / 120s）。
+     - 好感度亲密减免折扣（最高 25%）与饱腹感进食调节系数（<30% 饥饿加速 20%，>=80% 饱腹放缓 20%）。
+     - 饱腹度每 2 分钟自然时间衰减 1 点，饱腹度 < 25% 触发饥饿低落心情并主动弹出求投喂提醒气泡。
+     - 投喂中心支持毫秒级动态倒计时置灰（`⏳ 45s`）与 100% 满腹保护。
+  2. **Token 实时统计探针修正** (`MascotTokenBridge.tsx` & `client/index.tsx`)：
+     - 挂载点从 `conversation.composer` 修正至 `conversation.composer.dock` 常驻底栏，确保探针 100% 激活。
+     - 优先提取官方 `useProjection('tokenUsage')` / `useProjection('sessionStats')`，并以 `useSession(s => s.nodes)` 兜底。
+  3. **全站历史账本（All-Time Ledger）与双重视图** (`pricing-engine.ts`, `MascotDashboard.tsx`, `MascotPet.tsx`)：
+     - 建立 `dsh_billing_ledger_v2` 全局持久化账本，跨会话隔离并累加全站总消费与总 Token 数。
+     - 用量账单面板清晰呈现【当前会话预估消费】、【全站历史累计总计费】与【当月预算进度】双重视图。
+  4. **质量门禁**：
+     - 单元测试全量通过 (19/19 PASS)。
+     - 插件统一打包构建完成。

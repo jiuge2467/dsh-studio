@@ -1,19 +1,19 @@
 # PRD: DSH Better-Sidebar Agent 技能与规则工作台插件 (dsh-better-sidebar-skills)
 
-> **文档版本**：v1.0.0 (Phase 1: PRD & Scope)  
-> **责任角色**：🎯 PM（产品经理）  
-> **状态**：待评审 (Pending Review & Gate Approval)  
+> **文档版本**：v1.0.0 (Phase 1: PRD & Scope)
+> **责任角色**：🎯 PM（产品经理）
+> **状态**：待评审 (Pending Review & Gate Approval)
 
 ---
 
 ## 1. 需求背景与目标定位
 
 ### 1.1 需求四问
-1. **目标用户是谁？**  
+1. **目标用户是谁？**
    使用 DeepSeek Harness (DSH) 进行日常编码、研发调试，同时本地积累了 Antigravity、Claude Code、Codex、Cursor 等主流 Agent 技能（Skills）、规则（Rules）与指令资产的开发者。
-2. **在什么核心场景下使用？**  
+2. **在什么核心场景下使用？**
    在 DSH Web 工作台侧边栏中，开发者需要实时掌握当前工作区与全局环境中加载了哪些 Agent 技能，快速查看技能文档、修改入参提示词、新建常用技能模版，无需频繁在各级隐藏目录中翻找 Markdown 文件。
-3. **解决什么核心痛点？**  
+3. **解决什么核心痛点？**
    - **割裂分散**：不同 Agent 工具的技能规范与存放目录各异（如 `.agents/skills`、`.claude/skills`、`.cursor/rules`），缺乏统一的可视化索引。
    - **感知度低**：进入新项目或长周期协作时，用户难以快速了解“当前 AI 具备哪些特定能力/技能”。
    - **编辑不便**：调试技能 prompt 时需要手动用外部编辑器找文件修改。
@@ -95,30 +95,30 @@
 
 ## 5. EARS 格式验收标准 (Acceptance Criteria)
 
-- **AC-01 (自动发现)**：  
-  *WHEN* 用户在 DSH 中打开任意工作区并切换到技能侧边栏，  
+- **AC-01 (自动发现)**：
+  *WHEN* 用户在 DSH 中打开任意工作区并切换到技能侧边栏，
   *THE SYSTEM SHALL* 在 300ms 内异步扫描并解析工作区及全局 Agent 技能目录，准确呈现在卡片列表中。
-- **AC-02 (健壮解析)**：  
-  *IF* 某个 `SKILL.md` 的 YAML Frontmatter 格式有残缺或缺失，  
+- **AC-02 (健壮解析)**：
+  *IF* 某个 `SKILL.md` 的 YAML Frontmatter 格式有残缺或缺失，
   *THE SYSTEM SHALL* 优雅降级提取首行标题或文件路径作为 fallback，严禁界面崩溃或白屏。
-- **AC-03 (实时联动)**：  
-  *WHEN* 用户在技能卡片上点击【编辑】按钮，  
+- **AC-03 (实时联动)**：
+  *WHEN* 用户在技能卡片上点击【编辑】按钮，
   *THE SYSTEM SHALL* 触发 better-sidebar 的 `openFile` 机制，在内置编辑器 Tab 中准确定位并高亮该文件。
-- **AC-04 (角标与通知)**：  
-  *WHEN* 侧边栏 Tab 栏渲染时，  
+- **AC-04 (角标与通知)**：
+  *WHEN* 侧边栏 Tab 栏渲染时，
   *THE SYSTEM SHALL* 通过 `badge` 钩子动态显示当前已就绪的技能有效总数。
-- **AC-05 (跨平台兼容)**：  
+- **AC-05 (跨平台兼容)**：
   *THE SYSTEM SHALL* 在 Windows (PowerShell/CMD)、macOS、Linux 下的路径分隔符与全局主目录（`~` / `%USERPROFILE%`）中均保持无缝解析与零报错。
 
 ---
 
 ## 6. 技术风险与规避策略
 
-1. **跨平台路径扫描开销**：  
-   *风险*：全局目录或复杂大型 node_modules 深度遍历导致卡顿。  
+1. **跨平台路径扫描开销**：
+   *风险*：全局目录或复杂大型 node_modules 深度遍历导致卡顿。
    *规避*：限制遍历深度（Depth ≤ 3），设置严格的扫描白名单与 glob 过滤器，前端使用内存缓存防抖。
-2. **Better-Sidebar 纯浏览器沙箱契约**：  
-   *风险*：根据 better-sidebar 规范，client bundle 严禁包含 Node 原生模块依赖。  
+2. **Better-Sidebar 纯浏览器沙箱契约**：
+   *风险*：根据 better-sidebar 规范，client bundle 严禁包含 Node 原生模块依赖。
    *规避*：将文件与目录扫描逻辑封装为 Host 半后端路由（`/sidebar/api/skills.*` 或通过 `/sidebar/api/fs.read` / `fs.tree`），Client 端保持纯 React 状态流与零 Node 运行时依赖。
 
 ---

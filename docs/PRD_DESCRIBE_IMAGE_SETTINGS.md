@@ -1,8 +1,8 @@
 # 图像理解（describe_image）设置持久化修复与智能连通性探测 PRD
 
-> **文档性质**：Product Requirements Document (PRD)  
-> **所属模块**：`@linxin666/dsh-tool-describe-image` (Client & Host) / Web UI Settings  
-> **当前阶段**：Phase 1: PRD & Scope (PM)  
+> **文档性质**：Product Requirements Document (PRD)
+> **所属模块**：`@linxin666/dsh-tool-describe-image` (Client & Host) / Web UI Settings
+> **当前阶段**：Phase 1: PRD & Scope (PM)
 > **版本**：v1.0.0
 
 ---

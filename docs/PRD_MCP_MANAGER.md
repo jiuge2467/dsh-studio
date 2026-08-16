@@ -1,7 +1,7 @@
 # PRD & 架构设计方案：MCP (Model Context Protocol) 可视化管理中心
 
-> **文档版本**：v1.0.0 (Phase 1 PRD & Phase 2 ARCH)  
-> **适用模块**：`dsh-better-sidebar-mcp` (DeepSeek Harness 侧边栏与设置集成插件)  
+> **文档版本**：v1.0.0 (Phase 1 PRD & Phase 2 ARCH)
+> **适用模块**：`dsh-better-sidebar-mcp` (DeepSeek Harness 侧边栏与设置集成插件)
 > **核心目标**：提供开箱即用、全自动发现、可视化调试、一键安装的现代化 MCP 管理平台。
 
 ---

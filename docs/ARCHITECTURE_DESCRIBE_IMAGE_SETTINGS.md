@@ -1,8 +1,8 @@
 # 图像理解（describe_image）设置持久化与智能连通性技术架构规范 (Architecture Spec)
 
-> **文档性质**：System Architecture & API Contract Specification  
-> **所属模块**：`@linxin666/dsh-tool-describe-image` (Client & Host)  
-> **当前阶段**：Phase 2: Arch & Contracts (ARCH)  
+> **文档性质**：System Architecture & API Contract Specification
+> **所属模块**：`@linxin666/dsh-tool-describe-image` (Client & Host)
+> **当前阶段**：Phase 2: Arch & Contracts (ARCH)
 > **版本**：v1.0.0
 
 ---
@@ -45,14 +45,14 @@ graph TD
     UI_Card --> UI_Form
     UI_Form -->|1. 单字段/多字段设置修改| Settings_Prov
     Settings_Prov --> Val_Hook
-    
+
     UI_Card --> UI_Client
     UI_Client -->|2. 获取模型列表| Route_Models
     UI_Client -->|3. 测试连通性| Route_Ping
-    
+
     Route_Models -->|4. 带 Bearer Key 探测| Ext_Models
     Route_Ping -->|5. 1x1 极小像素探测包| Ext_Completions
-    
+
     Tool_Exec --> V_Client
     V_Client --> Ext_Completions
 ```

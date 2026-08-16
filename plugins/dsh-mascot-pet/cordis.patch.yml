@@ -1,0 +1,8 @@
+# dsh-mascot-pet bundle patch layer
+#
+# When this plugin is installed via:
+#   dsh plugin --profile <name> add dsh-mascot-pet@<version>
+# the DSH runtime inserts this patch into the active bundle layer.
+- insert:
+    - id: mascot-pet
+      name: 'dsh-mascot-pet'

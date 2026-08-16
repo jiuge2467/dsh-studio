@@ -8,6 +8,8 @@ packages:
   # Product assemblies over the package tier; apps/cli owns the `dsh` bin.
   - apps/*
   - website
+  # Standalone product plugins (Mascot Pet, Better Sidebar MCP, Skills)
+  - plugins/*
   # The runnable demo leaves join as ONE workspace member: examples/package.json
   # declares the union of every leaf's cordis.yml plugins as workspace:*, so a
   # plain-node (`:lib`) boot of any leaf (examples/<leaf>/cordis.yml) resolves its

@@ -1,9 +1,9 @@
 # 小鲸鱼姬皮肤装扮系统设计规范与原型方案 (Mascot Skins Design)
 
-> **文档性质**：Visual & Technical Design Specification  
-> **责任角色**：🎨 UI/UX 设计师 & 🏗️ ARCH  
-> **关联原型**：用户提供之【极客风 Geek Style】与【夏日水手服 Summer Sailor Uniform】设计案  
-> **当前阶段**：皮肤设计评审阶段 (待用户审查后编码注入)  
+> **文档性质**：Visual & Technical Design Specification
+> **责任角色**：🎨 UI/UX 设计师 & 🏗️ ARCH
+> **关联原型**：用户提供之【极客风 Geek Style】与【夏日水手服 Summer Sailor Uniform】设计案
+> **当前阶段**：皮肤设计评审阶段 (待用户审查后编码注入)
 
 ---
 

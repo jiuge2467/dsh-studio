@@ -1,8 +1,8 @@
 # Token 计费统计与小鲸鱼姬切图/样式修复方案 (Fix & Enhancement Plan)
 
-> **文档性质**：问题根因分析、技术设计方案与修复规范 (Root Cause & Technical Specification)  
-> **责任角色**：🏗️ ARCH & 💻 DEV & 🎨 UI/UX  
-> **当前阶段**：方案审查阶段 (待用户审查确认后开始执行)  
+> **文档性质**：问题根因分析、技术设计方案与修复规范 (Root Cause & Technical Specification)
+> **责任角色**：🏗️ ARCH & 💻 DEV & 🎨 UI/UX
+> **当前阶段**：方案审查阶段 (待用户审查确认后开始执行)
 
 ---
 

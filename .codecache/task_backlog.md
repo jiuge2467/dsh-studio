@@ -1,34 +1,31 @@
-# Task Backlog: MCP Manager Plugin & Sidebar Hub
+# Task Backlog: 零食投喂 CD 体系 / 饥饿心情系统 & Token 全局累计账本
 
 ## Phase 1: PRD & Scope (PM) - [DONE]
-- [x] 深度调研 GitHub 与业界优秀 MCP 管理工具（Cherry Studio, Cline, Roo Code, MCPSM, McpHub）
-- [x] 提炼核心场景：多源自动识别（Claude Desktop / Cursor / VSCode / Workspace）、可视化增删改查、状态监控、单工具在线测试调试
-- [x] 制定功能矩阵（P0 自动扫描/多源聚合/开关切换/连通性探测/单工具在线调试，P1 市场预设/JSON导入导出）
-- [x] 产出 `docs/PRD_MCP_MANAGER.md` 并获得确认
+- [x] 零食差异化 CD 需求收敛（30s / 60s / 90s / 120s）
+- [x] 好感度折扣 & 饱腹度进食调节算法设计
+- [x] 饱腹感时间自然衰减 & 饥饿低落主动提醒机制
+- [x] Token 实时未统计与全站历史总计费累计需求收敛
+- [x] 交付产物：`implementation_plan.md`
 
-## Phase 2: Architecture & Spec (ARCH) - [DONE]
-- [x] 规划多源探测器（Scanner）层级与优先序（Workspace > VSCode/Cursor > Claude > Global）
-- [x] 锁定 `/mcp-manager/api/*` 接口契约（`list`, `healthcheck`, `test-tool`, `save-server`, `delete-server`, `toggle-server`, `import-config`, `marketplace`）
-- [x] 规划侧边栏 Tab 插件装配方案（`betterSidebar.registerTab` 与设置页面的“侧边卡片”联动）
-- [x] 规划工具调试交互沙箱（参数 Schema 动态输入 + 实时调用反馈）
+## Phase 2: Architecture & Contracts (ARCH) - [DONE]
+- [x] 零食动态 CD 数学模型设计
+- [x] 饱腹度自然时间衰减算法（每 2 分钟 1 点）
+- [x] `MascotTokenBridge` 插槽切换至 `conversation.composer.dock` 常驻底栏
+- [x] `dsh_billing_ledger_v2` 全局持久化账本模型与跨会话隔离契约锁定
 
 ## Phase 3: Coding & Implementation (DEV) - [DONE]
-- [x] 创建 `dsh-better-sidebar-mcp` 插件工程与目录骨架
-- [x] 实现多源扫描引擎 `src/scanner/scanner.ts`
-- [x] 实现配置原子读写与管理 `src/scanner/config-store.ts`
-- [x] 实现健康探测与单工具调试沙箱 `src/scanner/tester.ts`
-- [x] 实现官方精选热门预设库 `src/scanner/marketplace.ts`
-- [x] 实现后端 HTTP 前缀路由 `src/index.ts`
-- [x] 实现纯矢量 DSH 风格 SVG 图标集 `src/client/components/Icons.tsx`
-- [x] 实现 React 侧边栏界面 `McpView.tsx`, `ServerCard.tsx`, `ToolItem.tsx`, `ToolTesterModal.tsx`, `AddServerModal.tsx`, `ImportConfigModal.tsx`
-- [x] 注册 BetterSidebar Tab (`id: 'dsh-mcp:manager'`)
+- [x] 升级 `MascotAffectionStore.ts`：支持动态 CD、倒计时查询、时间衰减与饥饿情绪检测
+- [x] 升级 `FeedingCenter.tsx`：实现 CD 实时倒计时置灰（`⏳ 45s`）、饱腹度状态条与满腹保护
+- [x] 升级 `pricing-engine.ts`：实现全站历史累计账本（All-Time Ledger）与多会话隔离累加
+- [x] 升级 `MascotTokenBridge.tsx` & `client/index.tsx`：修正探针插槽并双轨提取会话与节点 Token
+- [x] 升级 `MascotDashboard.tsx` & `MascotPet.tsx`：用量账单展示双重视图，周期自检饥饿状态并弹出提醒气泡
 
 ## Phase 4: Test & Verify (QA) - [DONE]
-- [x] 编写 `tests/scanner.test.ts`、`tests/config-store.test.ts`、`tests/marketplace.test.ts`
-- [x] Vitest 单元测试 10/10 全绿通过
-- [x] 编写 Scratch 脚本完成完整端到端流程验证（List -> Save -> Toggle -> Delete）
+- [x] 扩充 `tests/pricing-engine.test.ts` 覆盖全站多会话历史账本累加与隔离
+- [x] 扩充 `tests/engines.test.ts` 覆盖动态 CD、好感度减免、冷却拦截与低饱腹度低落情绪判定
+- [x] 运行全量 Vitest 单元测试（19/19 全绿通过 100% PASS）
 
-## Phase 5 & 6: Release & DevOps (OPS) - [DONE]
-- [x] 链接插件至 DSH Web Profile (`~/.dsh/profiles/web`)
-- [x] 重启服务并绑定 `0.0.0.0:3080`
-- [x] 浏览器实机自动化操作验证（添加服务、探测连通性、查看工具树）
+## Phase 5 & 6: Package & Release (OPS) - [DONE]
+- [x] 重新打包构建 `plugins/dsh-mascot-pet`
+- [x] 验证向后兼容与 LocalStorage 数据无损升级
+- [x] 产出 `walkthrough.md` 交付报告与功能验收清单

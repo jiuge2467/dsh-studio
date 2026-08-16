@@ -1,9 +1,9 @@
 # Release & SOP Guide: DSH Agent 技能与规则工作台 (dsh-better-sidebar-skills)
 
-> **发布版本**：v0.1.0-alpha  
-> **责任角色**：🚀 OPS（DevOps 工程师）  
-> **集成基座**：`DSH-better-sidebar` (v0.12.2+)  
-> **服务地址**：[http://127.0.0.1:3080](http://127.0.0.1:3080)  
+> **发布版本**：v0.1.0-alpha
+> **责任角色**：🚀 OPS（DevOps 工程师）
+> **集成基座**：`DSH-better-sidebar` (v0.12.2+)
+> **服务地址**：[http://127.0.0.1:3080](http://127.0.0.1:3080)
 
 ---
 

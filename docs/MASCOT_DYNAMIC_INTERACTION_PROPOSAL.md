@@ -1,8 +1,8 @@
 # 小鲸鱼姬动态互动与自主灵动桌面宠物升级方案 (PRD & Technical Proposal)
 
-> **文档性质**：需求分析、技术选型对比与产品架构方案 (PRD & Architecture Design)  
-> **责任角色**：🎯 PM & 🏗️ ARCH & 🎨 UI/UX & 💻 DEV  
-> **当前阶段**：方案汇报阶段 (等待用户审查确认)  
+> **文档性质**：需求分析、技术选型对比与产品架构方案 (PRD & Architecture Design)
+> **责任角色**：🎯 PM & 🏗️ ARCH & 🎨 UI/UX & 💻 DEV
+> **当前阶段**：方案汇报阶段 (等待用户审查确认)
 
 ---
 

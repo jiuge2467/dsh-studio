@@ -1,0 +1,514 @@
+/* MascotPet.module.css
+ * 小鲸鱼姬 2.0 桌面宠物 & 摸鱼中心 — 语义化主题与灵动交互样式表
+ */
+
+/* ── 宠物容器 (fixed 浮层) ── */
+.mascotContainer {
+  position: fixed;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  pointer-events: auto;
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.isDragging {
+  cursor: grabbing !important;
+  transition: none !important;
+}
+
+/* ── 头像按钮 ── */
+.avatarBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.avatarBtn:active {
+  transform: scale(0.95);
+}
+
+.avatarImg {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  pointer-events: none;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+/* 1. 悬浮摇摆动画（idle 自然呼吸） */
+.idleFloating {
+  animation: floatBob 3.2s ease-in-out infinite;
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* 2. 悬空扑腾小短腿 (拖拽中) */
+.dragHangWiggle {
+  animation: hangWiggle 0.4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.28));
+}
+
+@keyframes hangWiggle {
+  0% {
+    transform: rotate(-7deg) scale(1.08) translateY(-4px);
+  }
+  100% {
+    transform: rotate(7deg) scale(1.08) translateY(2px);
+  }
+}
+
+/* 3. 思考中高速脉冲发光 */
+.thinkingGlow {
+  animation: thinkPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes thinkPulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.5)); }
+  50%       { filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.95)) translateY(-4px); }
+}
+
+/* 4. 完成庆祝跳跃 */
+.doneCelebrate {
+  animation: celebrateJump 0.6s ease-in-out 4;
+}
+
+@keyframes celebrateJump {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-16px) scale(1.08); }
+}
+
+/* 5. 报错晕倒/抓狂 */
+.failedDizzy {
+  animation: dizzyShake 0.5s ease-in-out infinite;
+  filter: grayscale(0.2) drop-shadow(0 0 10px rgba(239, 68, 68, 0.6));
+}
+
+@keyframes dizzyShake {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-8deg) translateY(-2px); }
+  75% { transform: rotate(8deg) translateY(2px); }
+}
+
+/* 6. 工具检修姿态 */
+.toolWorking {
+  animation: toolBob 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.7));
+}
+
+@keyframes toolBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-4deg); }
+}
+
+/* 7. 灵动精灵步态系统 (Walking Gait with Dynamic Steps, Hops & Wobble) */
+.walkingGait {
+  animation: walkGait 0.36s ease-in-out infinite alternate, walkHop 0.18s ease-out infinite alternate;
+  transform-origin: 50% 92%;
+}
+
+@keyframes walkGait {
+  0% {
+    transform: rotate(-5deg) skewX(-2deg);
+  }
+  100% {
+    transform: rotate(5deg) skewX(2deg);
+  }
+}
+
+@keyframes walkHop {
+  0% {
+    translate: 0 0;
+    scale: 1.02 0.97;
+  }
+  100% {
+    translate: 0 -4px;
+    scale: 0.97 1.04;
+  }
+}
+
+/* 8. 漫步停止刹车微蹲缓冲 (Landing Cushion) */
+.landingCushion {
+  animation: landingSquash 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: 50% 95%;
+}
+
+@keyframes landingSquash {
+  0% {
+    transform: scale(1.08, 0.9) translateY(2px);
+  }
+  50% {
+    transform: scale(0.96, 1.04) translateY(-2px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+/* ── 动态对话与思考气泡 ── */
+.thinkingBubble {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--dsw-alias-bg-surface, rgba(255, 255, 255, 0.96));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(125, 125, 125, 0.22));
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 11px;
+  color: var(--dsw-alias-label-primary, #0f172a);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+  animation: bubblePop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.dialogBubble {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--dsw-alias-bg-surface, rgba(255, 255, 255, 0.98));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(125, 125, 125, 0.25));
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--dsw-alias-label-primary, #0f172a);
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
+  animation: bubblePop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 260px;
+}
+
+@keyframes bubblePop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.thinkingDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  animation: pulseDot 1s ease-in-out infinite;
+}
+
+.bubbleCost {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.bubbleTokens {
+  color: var(--dsw-alias-label-secondary, #64748b);
+  font-size: 10px;
+}
+
+/* ── 快捷动作按钮 (高对比度清晰字体) ── */
+.bubbleBtnPink {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(236, 72, 153, 0.14);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  color: #be185d;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.bubbleBtnPink:hover {
+  background: rgba(236, 72, 153, 0.25);
+  border-color: rgba(236, 72, 153, 0.6);
+  transform: translateY(-1px);
+}
+
+.bubbleBtnBlue {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #1d4ed8;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.bubbleBtnBlue:hover {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: translateY(-1px);
+}
+
+.bubbleBtnGreen {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #047857;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.bubbleBtnGreen:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ── 状态胶囊 (主题适配高对比度) ── */
+.statusPill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--dsw-alias-bg-surface, rgba(255, 255, 255, 0.94));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(125, 125, 125, 0.25));
+  border-radius: 20px;
+  padding: 4px 11px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--dsw-alias-label-primary, #0f172a);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.statusPill:hover {
+  background: var(--dsw-alias-bg-surface-hover, rgba(255, 255, 255, 0.98));
+  border-color: var(--dsw-alias-border-active, rgba(59, 130, 246, 0.4));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.costText {
+  color: #059669;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.speedText {
+  color: var(--dsw-alias-label-secondary, #475569);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.statusDot.busy {
+  background: #38bdf8;
+  animation: pulseDot 1s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+/* ── 伴侣控制面板 ── */
+.dashboardPanel {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  right: 0;
+  background: var(--dsw-alias-bg-surface, rgba(255, 255, 255, 0.98));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(125, 125, 125, 0.22));
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10000;
+  color: var(--dsw-alias-label-primary, #0f172a);
+  animation: panelSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid var(--dsw-alias-border-subtle, rgba(125, 125, 125, 0.1));
+}
+
+.panelTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.panelTitle {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.panelBadge {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 99px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--dsw-alias-label-secondary, #64748b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--dsw-alias-label-primary, #1e293b);
+}
+
+.panelBody {
+  padding: 12px 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.metricCard {
+  background: var(--dsw-alias-bg-hover, rgba(0, 0, 0, 0.03));
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metricLabel {
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary, #64748b);
+}
+
+.metricValue {
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cacheCard {
+  background: var(--dsw-alias-bg-hover, rgba(0, 0, 0, 0.03));
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cacheTrack {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--dsw-alias-border-subtle, rgba(0, 0, 0, 0.08));
+  overflow: hidden;
+}
+
+.cacheFill {
+  height: 100%;
+  background: #38bdf8;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.tokenBreakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary, #64748b);
+  padding: 6px 8px;
+  background: var(--dsw-alias-bg-hover, rgba(0, 0, 0, 0.02));
+  border-radius: 6px;
+}
+
+.budgetSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.budgetHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.budgetTrack {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--dsw-alias-border-subtle, rgba(0, 0, 0, 0.08));
+  overflow: hidden;
+}
+
+.budgetBar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}

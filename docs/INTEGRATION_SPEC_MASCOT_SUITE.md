@@ -1,10 +1,10 @@
 # DeepSeek Harness 功能融合与模块整合清单说明书 (Integration Spec)
 
-> **文档性质**：模块整合决策与架构适配规范 (Module Inventory & Integration Specification)  
-> **涉及仓库**：  
-> - 1. `E:\ccode\vscode_code\个人项目\dsh-web-ui`（生产力工具、皮肤中心与系统监控）  
-> - 2. `E:\ccode\vscode_code\个人项目\dsh-mascot-pet`（Q版小鲸鱼姬桌宠与摸鱼中心）  
-> - 3. `E:\ccode\vscode_code\个人项目\deepseek-harness-master\DSH-better-sidebar`（现已运行的高级多功能侧边栏）  
+> **文档性质**：模块整合决策与架构适配规范 (Module Inventory & Integration Specification)
+> **涉及仓库**：
+> - 1. `E:\ccode\vscode_code\个人项目\dsh-web-ui`（生产力工具、皮肤中心与系统监控）
+> - 2. `E:\ccode\vscode_code\个人项目\dsh-mascot-pet`（Q版小鲸鱼姬桌宠与摸鱼中心）
+> - 3. `E:\ccode\vscode_code\个人项目\deepseek-harness-master\DSH-better-sidebar`（现已运行的高级多功能侧边栏）
 
 ---
 
