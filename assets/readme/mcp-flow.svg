@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mcp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="flow-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <filter id="mcp-shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1000" height="320" rx="14" fill="url(#mcp-bg)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Title -->
+  <text x="50" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#f8fafc">
+    🔌 MCP 多源扫描与在线 RPC 调试沙箱闭环
+  </text>
+  <text x="50" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">
+    从多环境配置自动发现，到免 AI 介入的零成本 JSON-RPC 毫秒级在线验活
+  </text>
+
+  <!-- Step 1: Multi-Source Discovery -->
+  <g transform="translate(50, 100)" filter="url(#mcp-shadow)">
+    <rect width="250" height="180" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <rect x="0" y="0" width="250" height="4" rx="2" fill="#38bdf8" />
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#38bdf8">1. 全域多源自动扫描</text>
+
+    <g transform="translate(18, 50)" font-family="monospace" font-size="11" fill="#cbd5e1">
+      <rect width="214" height="24" rx="4" fill="#0f172a" />
+      <text x="10" y="16" fill="#38bdf8">📁 ./.vscode/mcp.json</text>
+
+      <rect y="30" width="214" height="24" rx="4" fill="#0f172a" />
+      <text x="10" y="46" fill="#818cf8">📁 Claude Desktop Global</text>
+
+      <rect y="60" width="214" height="24" rx="4" fill="#0f172a" />
+      <text x="10" y="76" fill="#a855f7">📁 Cursor &amp; Antigravity</text>
+
+      <rect y="90" width="214" height="24" rx="4" fill="#0f172a" />
+      <text x="10" y="106" fill="#34d399">📁 ~/.dsh/mcp.json</text>
+    </g>
+  </g>
+
+  <!-- Connecting Arrow 1 -->
+  <g transform="translate(315, 185)">
+    <path d="M 0 0 L 40 0" stroke="url(#flow-line)" stroke-width="3" stroke-dasharray="4,4" />
+    <polygon points="40,-5 52,0 40,5" fill="#818cf8" />
+    <text x="26" y="-12" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#94a3b8">聚合解析</text>
+  </g>
+
+  <!-- Step 2: Presets & Schema Parsing -->
+  <g transform="translate(375, 100)" filter="url(#mcp-shadow)">
+    <rect width="260" height="180" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" />
+    <rect x="0" y="0" width="260" height="4" rx="2" fill="#818cf8" />
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#818cf8">2. 预设库 &amp; Schema 解析</text>
+
+    <g transform="translate(18, 52)">
+      <text x="0" y="16" font-family="sans-serif" font-size="13" fill="#e2e8f0">✨ 10+ 款热门官方预设轮播</text>
+      <text x="10" y="36" font-family="sans-serif" font-size="11" fill="#94a3b8">GitHub / SQLite / Brave / Puppeteer</text>
+
+      <line x1="0" y1="52" x2="224" y2="52" stroke="#334155" />
+
+      <text x="0" y="74" font-family="sans-serif" font-size="13" fill="#e2e8f0">⚡ JSON Schema 动态生成表单</text>
+      <text x="10" y="94" font-family="sans-serif" font-size="11" fill="#94a3b8">自动解析入参类型并填充默认测试值</text>
+      <text x="10" y="112" font-family="sans-serif" font-size="11" fill="#38bdf8">无需手写复杂 JSON 格式</text>
+    </g>
+  </g>
+
+  <!-- Connecting Arrow 2 -->
+  <g transform="translate(650, 185)">
+    <path d="M 0 0 L 40 0" stroke="url(#flow-line)" stroke-width="3" stroke-dasharray="4,4" />
+    <polygon points="40,-5 52,0 40,5" fill="#34d399" />
+    <text x="26" y="-12" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#94a3b8">一键测试</text>
+  </g>
+
+  <!-- Step 3: Tool Tester Sandbox -->
+  <g transform="translate(705, 100)" filter="url(#mcp-shadow)">
+    <rect width="245" height="180" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="1.5" />
+    <rect x="0" y="0" width="245" height="4" rx="2" fill="#34d399" />
+    <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#34d399">3. Tool Tester 在线沙箱</text>
+
+    <g transform="translate(18, 52)">
+      <rect width="209" height="30" rx="6" fill="#064e3b" fill-opacity="0.5" stroke="#059669" stroke-width="1" />
+      <text x="10" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#34d399">⚡ 真实 RPC 握手执行</text>
+
+      <g transform="translate(0, 42)" font-family="sans-serif" font-size="12" fill="#cbd5e1">
+        <text x="5" y="16" fill="#f1f5f9">⏱️ <tspan font-weight="700" fill="#38bdf8">毫秒级耗时精准呈现</tspan> (12ms)</text>
+        <text x="5" y="36" fill="#f1f5f9">💰 <tspan font-weight="700" fill="#34d399">0 Token 消耗</tspan> 快速排错</text>
+        <text x="5" y="56" fill="#f1f5f9">📋 返回结果高亮 &amp; 错误诊断</text>
+      </g>
+    </g>
+  </g>
+</svg>

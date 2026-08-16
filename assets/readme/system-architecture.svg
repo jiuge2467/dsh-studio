@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sys-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+    <linearGradient id="layer-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+    <linearGradient id="layer-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="layer-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+    <filter id="box-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <rect width="1000" height="440" rx="14" fill="url(#sys-bg)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="50" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#f8fafc">
+    🏗️ DSH Studio 模块化分层解耦架构
+  </text>
+  <text x="50" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">
+    基石内核 (Core &amp; Cordis) + 微前端热插拔插件群 (Plugins) + 沉浸式交互层 (UI Shell)
+  </text>
+
+  <!-- Layer 1: Presentation & Interactive Layer -->
+  <g transform="translate(50, 95)" filter="url(#box-shadow)">
+    <rect width="900" height="90" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+    <rect x="0" y="0" width="900" height="3" rx="1.5" fill="url(#layer-grad-1)" />
+    <text x="20" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#38bdf8">🎨 表现层 · 沉浸式 Web Shell &amp; 极客交互组件</text>
+
+    <g transform="translate(20, 36)">
+      <!-- Item 1 -->
+      <rect width="200" height="38" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="12" y="24" font-family="sans-serif" font-size="12" fill="#e2e8f0">🐬 小鲸鱼姬桌宠 &amp; 仪表盘</text>
+
+      <!-- Item 2 -->
+      <rect x="215" width="210" height="38" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="227" y="24" font-family="sans-serif" font-size="12" fill="#e2e8f0">🔌 MCP 可视化面板 &amp; 沙箱</text>
+
+      <!-- Item 3 -->
+      <rect x="440" width="205" height="38" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="452" y="24" font-family="sans-serif" font-size="12" fill="#e2e8f0">🧰 Explorer / Git / PTY 终端</text>
+
+      <!-- Item 4 -->
+      <rect x="660" width="200" height="38" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="672" y="24" font-family="sans-serif" font-size="12" fill="#e2e8f0">🧠 视觉思考流 &amp; 打字机</text>
+    </g>
+  </g>
+
+  <!-- Layer 2: Plugin Ecosystem -->
+  <g transform="translate(50, 205)" filter="url(#box-shadow)">
+    <rect width="900" height="95" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1" />
+    <rect x="0" y="0" width="900" height="3" rx="1.5" fill="url(#layer-grad-2)" />
+    <text x="20" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#c084fc">🧩 插件生态层 · 微前端独立装配 (Cordis / DSH Plugin)</text>
+
+    <g transform="translate(20, 36)">
+      <!-- Plugin 1 -->
+      <rect width="200" height="44" rx="6" fill="#130e22" stroke="#7e22ce" stroke-width="1" />
+      <text x="12" y="20" font-family="monospace" font-size="11" font-weight="700" fill="#c084fc">dsh-mascot-pet</text>
+      <text x="12" y="36" font-family="sans-serif" font-size="10" fill="#94a3b8">立绘/刷题/投喂/账本探针</text>
+
+      <!-- Plugin 2 -->
+      <rect x="215" width="210" height="44" rx="6" fill="#130e22" stroke="#7e22ce" stroke-width="1" />
+      <text x="227" y="20" font-family="monospace" font-size="11" font-weight="700" fill="#c084fc">dsh-better-sidebar-mcp</text>
+      <text x="227" y="36" font-family="sans-serif" font-size="10" fill="#94a3b8">多源扫描/预设/RPC 沙箱</text>
+
+      <!-- Plugin 3 -->
+      <rect x="440" width="205" height="44" rx="6" fill="#130e22" stroke="#7e22ce" stroke-width="1" />
+      <text x="452" y="20" font-family="monospace" font-size="11" font-weight="700" fill="#c084fc">dsh-better-sidebar</text>
+      <text x="452" y="36" font-family="sans-serif" font-size="10" fill="#94a3b8">ConPTY/Git/Explorer 容器</text>
+
+      <!-- Plugin 4 -->
+      <rect x="660" width="200" height="44" rx="6" fill="#130e22" stroke="#7e22ce" stroke-width="1" />
+      <text x="672" y="20" font-family="monospace" font-size="11" font-weight="700" fill="#c084fc">dsh-tool-describe-image</text>
+      <text x="672" y="36" font-family="sans-serif" font-size="10" fill="#94a3b8">MiMo 思考流流式适配器</text>
+    </g>
+  </g>
+
+  <!-- Layer 3: Runtime Core -->
+  <g transform="translate(50, 320)" filter="url(#box-shadow)">
+    <rect width="900" height="90" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1" />
+    <rect x="0" y="0" width="900" height="3" rx="1.5" fill="url(#layer-grad-3)" />
+    <text x="20" y="24" font-family="sans-serif" font-size="13" font-weight="700" fill="#34d399">⚙️ 运行时内核 · DSH Core &amp; RPC Engine</text>
+
+    <g transform="translate(20, 36)">
+      <rect width="270" height="38" rx="6" fill="#062e24" stroke="#059669" />
+      <text x="15" y="24" font-family="sans-serif" font-size="12" fill="#a7f3d0">⚙️ Agent Loop &amp; 决策状态机</text>
+
+      <rect x="290" width="280" height="38" rx="6" fill="#062e24" stroke="#059669" />
+      <text x="305" y="24" font-family="sans-serif" font-size="12" fill="#a7f3d0">📡 JSON-RPC 2.0 网关 &amp; Typert</text>
+
+      <rect x="590" width="290" height="38" rx="6" fill="#062e24" stroke="#059669" />
+      <text x="605" y="24" font-family="sans-serif" font-size="12" fill="#a7f3d0">💾 SQLite / 跨会话总账本持久化</text>
+    </g>
+  </g>
+</svg>

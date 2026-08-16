@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cot-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#110d1d" />
+      <stop offset="100%" stop-color="#0a0812" />
+    </linearGradient>
+    <linearGradient id="purple-flow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <filter id="cot-shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1000" height="300" rx="14" fill="url(#cot-bg)" stroke="#3b2d54" stroke-width="1.5" />
+
+  <!-- Title -->
+  <text x="50" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#f8fafc">
+    🧠 CoT 视觉多模态与深度思考流穿透引擎
+  </text>
+  <text x="50" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#cbd5e1">
+    传统 UI 无法解析视觉模型的 reasoning_content，DSH Studio 实现无损流式捕获与思维链折叠展示
+  </text>
+
+  <!-- Comparison Left: Traditional UI -->
+  <g transform="translate(50, 95)" filter="url(#cot-shadow)">
+    <rect width="420" height="170" rx="10" fill="#1e172a" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3" />
+    <rect x="0" y="0" width="420" height="4" rx="2" fill="#ef4444" />
+    <text x="20" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f87171">❌ 传统前端框架处理视觉思考模型</text>
+
+    <g transform="translate(20, 42)" font-family="monospace" font-size="11" fill="#94a3b8">
+      <rect width="380" height="26" rx="4" fill="#0f0c16" />
+      <text x="10" y="17" fill="#f87171">1. 流式响应: content="" (为空)</text>
+
+      <rect y="32" width="380" height="26" rx="4" fill="#0f0c16" />
+      <text x="10" y="49" fill="#f87171">2. 误判响应结束或陷入长达数十秒的无响应白屏</text>
+
+      <rect y="64" width="380" height="26" rx="4" fill="#0f0c16" />
+      <text x="10" y="81" fill="#ef4444">3. 丢弃 reasoning_content，无法获知推导过程</text>
+    </g>
+  </g>
+
+  <!-- Comparison Right: DSH Studio Solution -->
+  <g transform="translate(530, 95)" filter="url(#cot-shadow)">
+    <rect width="420" height="170" rx="10" fill="#1f1830" stroke="#c084fc" stroke-width="1.5" />
+    <rect x="0" y="0" width="420" height="4" rx="2" fill="url(#purple-flow)" />
+    <text x="20" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#c084fc">✨ DSH-Studio 独创 CoT 视觉适配器</text>
+
+    <g transform="translate(20, 42)" font-family="monospace" font-size="11">
+      <rect width="380" height="26" rx="4" fill="#120c1f" />
+      <text x="10" y="17" fill="#c084fc">1. 专有流式捕获 reasoning_content 思考过程</text>
+
+      <rect y="32" width="380" height="26" rx="4" fill="#120c1f" />
+      <text x="10" y="49" fill="#34d399">2. 毫秒级流式打字机渲染 &amp; 支持折叠/展开</text>
+
+      <rect y="64" width="380" height="26" rx="4" fill="#120c1f" />
+      <text x="10" y="81" fill="#38bdf8">3. 图形化连通性延迟测速 + 厂商模型自动探测</text>
+    </g>
+  </g>
+</svg>
