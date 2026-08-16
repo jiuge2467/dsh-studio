@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <strong>🔥 现代化 DeepSeek Harness 全栈增强工作台 · 多源 MCP 可视化调试中枢 · 视觉思考引擎 · 灵动极客伴侣</strong>
+  <strong>🔥 现代化 DeepSeek Harness 全栈增强工作台 · 远程 SSH 极客侧边栏 · 多源 MCP 可视化调试中枢 · 视觉思考引擎 · 灵动伴侣</strong>
 </p>
 
 <p align="center">
   <a href="README.md">简体中文</a> •
   <a href="README.en.md">English</a> •
-  <a href="#-为什么选择-dsh-studio">核心优势</a> •
+  <a href="#-与原生-deepseek-harness-dsh-对比我们增加了什么">与原生对比</a> •
   <a href="#-竞品多维对比矩阵">竞品对比</a> •
   <a href="#-核心功能图文深度矩阵">功能矩阵</a> •
   <a href="#-30-秒极速上手">快速开始</a>
@@ -27,14 +27,24 @@
 
 ---
 
-## 💡 为什么选择 DSH Studio？
+## 🆚 与原生 DeepSeek Harness (DSH) 对比：我们增加了什么？
 
-**DSH Studio**（DeepSeek Harness Studio）是为下一代 AI 开发者与 Agent 极客打造的**全栈增强工作台与插件套件**。它不仅打破了传统 Agent 客户端配置繁琐、调试黑盒的局限，更将工业级开发工具流、CoT 视觉思考流与高情绪价值的二次元桌宠完美融合：
+官方原生 **DeepSeek Harness (DSH)** 是一个底层的 Agent 运行时内核，侧重于核心 Loop 与基础 CLI。而 **DSH Studio** 是在上游基础上的**全栈工业级增强工作台与微前端生态**：
 
-* 🔌 **首创 MCP 在线沙箱**：无需呼叫 AI 消耗 Token，单工具一键自动填充入参、真实 RPC 握手执行与毫秒级延迟测速；
-* 🧠 **CoT 视觉思考穿透**：流式捕获带深度思考多模态模型（如 Xiaomi MiMo 等）的 `reasoning_content`，杜绝传统 UI 的白屏与丢弃思考链；
-* 🐬 **小鲸鱼姬 2.0 极客桌宠**：3 套高精立绘无缝换装、650ms 四级盲打刷题、零食投喂 CD 体系、极客解压微游戏厅与全站持久化 Token 总账本；
-* 🧰 **工业级全功能侧边栏**：资源管理器代码预览、Git 可视化提交历史与 Diff 对比、嵌入式 ConPTY/PTY 持久化终端。
+<p align="center">
+  <img src="assets/readme/dsh-vs-studio.svg" alt="DSH vs DSH Studio Comparison" width="100%" />
+</p>
+
+| 功能模块 | 原生 DeepSeek Harness (DSH) | 🌟 **DSH Studio (本项目)** |
+| :--- | :--- | :--- |
+| **🌐 远程 SSH & PTY 终端** | ❌ 仅支持基础本地子进程，无持久化终端，无法直连远程服务器 | ✅ **集成完整远程 SSH 主机直连 & ConPTY / PTY 终端**，支持多终端 Tab 与 **8 套 Agent 终端工具直连操控** |
+| **🧰 IDE 级开发工作流** | ❌ 仅限纯 Chat 会话面板，无法浏览代码与 Git 变更 | ✅ **工业级全功能侧边栏**：Explorer 代码高亮预览与搜索、Git 分支切换、可视化提交历史与 Diff 差异对比 |
+| **🔌 MCP 管理与发现** | ❌ 仅支持后台手动编辑单个 JSON，极易格式出错 | ✅ **全域多源自动扫描** (`.vscode`, Cursor, Claude, Antigravity 聚合) + 10+ 官方热门预设横向卡片流 |
+| **🧪 MCP 在线沙箱调试** | ❌ 无，必须提问大模型消耗 Token 触发 | ✅ **Tool Tester 独立沙箱** (Schema 动态表单、一键 Mock 填参、真实 RPC 握手与 **0 Token 毫秒级测速**) |
+| **🧠 视觉思考 (CoT) 穿透** | ❌ 无法流式解析多模态 `reasoning_content`，易白屏 | ✅ **独创 CoT 视觉引擎** (流式穿透 Xiaomi MiMo 等深度思考链，支持折叠与连通性测速) |
+| **🐬 极客桌宠与碎片利用** | ❌ 无伴侣系统，等待模型长生成枯燥漫长 | ✅ **小鲸鱼姬 2.0** (3 套高精立绘 + **650ms 四级盲打背词** + 零食投喂 CD 体系 + 极客解压微游戏厅) |
+| **💰 计费与账本透明度** | ⚠️ 仅单次会话粗略统计，刷新页面即全部丢失 | ✅ **全站持久化总账本 (All-Time Ledger)** + 实时底栏 Token 探针 + 月度预算动态进度条 |
+| **🧩 架构与装配模式** | 单一整体静态装配 | **微前端热插拔插件群** + 侧边栏卡片自由拖拽排序与独立启停 |
 
 ---
 
@@ -42,19 +52,40 @@
 
 | 对比维度 | 传统 Agent 客户端<br>*(Claude Desktop)* | 主流 Web 对话面板<br>*(LobeChat / Dify)* | AI 代码编辑器<br>*(Cursor / Continue)* | 🌟 **DSH-Studio**<br>*(本项目)* |
 | :--- | :--- | :--- | :--- | :--- |
+| **🌐 远程 SSH 与终端** | ❌ 无内置终端与 SSH | ❌ 仅限纯 Web 对话 | ⚠️ 内置终端但缺少 Agent 专属工具网关 | ✅ **集成 SSH 远程会话 + 8 套 Agent 终端交互工具** |
+| **🧰 一体化开发闭环** | ❌ 无侧边栏与文件树 | ❌ 纯 Chat 交互 | ⚠️ 编辑器内置但与 Agent 隔离 | ✅ **工业级侧边栏** (Explorer 语法预览 + Git Diff + PTY 终端) |
 | **🔌 MCP 扫描聚合** | ❌ 仅支持手工改单 JSON | ⚠️ 依赖后端插件或复杂配置 | ⚠️ 仅限本地单配置 | ✅ **全域多源自动扫描** (`.vscode`, Cursor, Claude, Antigravity 一键聚合) |
 | **🧪 MCP 在线沙箱** | ❌ 无，必须提问大模型触发 | ❌ 无单工具隔离调试能力 | ❌ 无单工具调试界面 | ✅ **Tool Tester 独立沙箱** (Schema 动态表单、一键填参、0 Token 毫秒测速) |
 | **🧠 视觉思考 (CoT)** | ❌ 无法解析视觉思考链 | ⚠️ 部分模型易白屏或丢失 | ❌ 仅支持通用图片输入 | ✅ **独创 CoT 视觉引擎** (流式捕获 `reasoning_content`，思维链无损透传) |
 | **🐬 极客陪伴与桌宠** | ❌ 严肃冷感界面 | ❌ 无伴侣系统 | ❌ 无伴侣系统 | ✅ **小鲸鱼姬 2.0** (3套高精立绘 + 状态共情 + 投喂CD + 极客解压游戏) |
 | **⚡ 极速空隙利用** | ❌ 生成时只能干等 | ❌ 无 | ❌ 无 | ✅ **四级极速刷词** (650ms 自动跳题、A/B/C/D 全键盘盲打，碎片时间背词) |
 | **💰 计费与预算透明** | ❌ 无全局统计 | ⚠️ 仅当前会话粗略统计 | ⚠️ 仅显示额度百分比 | ✅ **全站持久化总账本 (All-Time Ledger)** + 实时 Token 探针与月度预算条 |
-| **🧰 一体化开发闭环** | ❌ 无侧边栏与终端 | ❌ 仅限纯 Chat 交互 | ⚠️ 编辑器内置但与 Agent 隔离 | ✅ **工业级极客侧边栏** (Explorer 文件预览 + Git Diff 可视化 + PTY 终端) |
 
 ---
 
 ## 🌟 核心功能图文深度矩阵
 
-### 🔌 1. MCP 多源可视化管理中枢与在线调试沙箱 (`dsh-better-sidebar-mcp`)
+### 🧰 1. 工业级极客增强侧边栏与远程 SSH 终端 (`dsh-better-sidebar`)
+
+为 DSH Web 端提供面向工业级全栈开发与运维的**一体化侧边栏套件**：
+
+* **🌐 远程 SSH 会话直连与持久化 PTY 终端**：
+  - 支持多 Tab 会话管理（本地 Bash / PowerShell / WSL / **远程 SSH 主机免密直连**）；
+  - 支持断线重连与全屏极客终端沉浸模式；
+  - **内置 8 套专用 Agent 终端控制工具**：
+    `terminal_create`, `terminal_send`, `terminal_read`, `terminal_wait_for`, `terminal_resize`, `terminal_signal`, `terminal_close`, `terminal_list`，
+    赋予 AI Agent 直接操控远程服务器与本地终端执行自动化运维任务的强大能力。
+* **📁 资源管理器 (Explorer)**：
+  - 工业级树状工程文件浏览、秒级文件名搜索定位；
+  - 集成代码语法高亮即时预览（支持 Rust, Go, Python, TypeScript, C++, SQL, YAML, JSON 等 15+ 语言）。
+* **🌿 源代码管理 (Git)**：
+  - 实时分支切换与状态追踪；
+  - 可视化提交历史记录、工作区变更文件 Diff 差异对比高亮与一键撤销。
+* **🧩 侧边卡片按需装配**：在「设置 > 侧边卡片」中自由拖拽调整顺序与独立启停。
+
+---
+
+### 🔌 2. MCP 多源可视化管理中枢与在线调试沙箱 (`dsh-better-sidebar-mcp`)
 
 在侧边栏点击「MCP 管理」即可进入。系统提供全自动的多源配置嗅探、10+ 官方热门预设轮播与独立的 **Tool Tester 在线沙箱**：
 
@@ -69,7 +100,7 @@
 
 ---
 
-### 🧠 2. 视觉多模态与深度思考 (CoT) 穿透引擎 (`dsh-tool-describe-image`)
+### 🧠 3. 视觉多模态与深度思考 (CoT) 穿透引擎 (`dsh-tool-describe-image`)
 
 专为带深度思考能力的多模态大模型定制，提供无损的思维链流式穿透与图形化测速：
 
@@ -82,7 +113,7 @@
 
 ---
 
-### 🐬 3. 小鲸鱼姬 2.0 灵动极客桌宠与伴侣 (`dsh-mascot-pet`)
+### 🐬 4. 小鲸鱼姬 2.0 灵动极客桌宠与伴侣 (`dsh-mascot-pet`)
 
 常驻开发界面的灵动桌宠伴侣，将极客刷题、名梗互动、饱腹投喂与全站账本深度融合：
 
@@ -138,17 +169,6 @@
 
 ---
 
-### 🧰 4. 工业级极客增强侧边栏 (`dsh-better-sidebar`)
-
-为 DSH Web 端提供 IDE 级别的全功能侧边栏套件：
-
-* **资源管理器 (Explorer)**：支持工程文件树浏览、文件名搜索定位、多格式文件与语法高亮代码预览；
-* **源代码管理 (Git)**：实时分支切换、可视化提交历史记录、工作区变更文件 Diff 差异对比与一键撤销；
-* **嵌入式持久化终端 (Terminal)**：深度集成 ConPTY / PTY 终端会话，支持模型通过 Agent 工具直连终端并执行自动化任务；
-* **侧边卡片自由装配**：在「设置 > 侧边卡片」中自由拖拽排序与独立启停各项 Tab 页面。
-
----
-
 ## 🏗️ 系统分层解耦架构
 
 <p align="center">
@@ -163,7 +183,7 @@ dsh-studio/
 │   ├── typert/                 # 类型图生成器与运行时 RPC 注册网关
 │   └── host/                   # WebServer 与微前端宿主服务
 ├── plugins/                    # 🚀 热插拔微前端插件群
-│   ├── dsh-better-sidebar/     # 增强侧边栏容器 (Explorer, Git, Terminal)
+│   ├── dsh-better-sidebar/     # 工业级侧边栏容器 (SSH, ConPTY 终端, Explorer, Git)
 │   ├── dsh-better-sidebar-mcp/ # MCP 多源扫描、预设与在线 RPC 调试沙箱
 │   ├── dsh-mascot-pet/         # 小鲸鱼姬 2.0 桌宠、极速背单词与全站账本
 │   └── dsh-tool-describe-image/# CoT 视觉深度思考流适配器
@@ -201,11 +221,11 @@ pnpm dsh web --host 0.0.0.0
 如果你已有正在运行的 DSH 环境，也可以按需将各个独立插件添加到 `web` profile 中：
 
 ```bash
-# 1. 安装 MCP 可视化管理与调试沙箱
-cd ~/.dsh && dsh plugin --profile web add dsh-better-sidebar-mcp
-
-# 2. 安装工业级增强侧边栏
+# 1. 安装工业级增强侧边栏 (含 SSH 远程与终端)
 cd ~/.dsh && dsh plugin --profile web add dsh-better-sidebar
+
+# 2. 安装 MCP 可视化管理与调试沙箱
+cd ~/.dsh && dsh plugin --profile web add dsh-better-sidebar-mcp
 
 # 3. 安装小鲸鱼姬桌宠伴侣
 cd ~/.dsh && dsh plugin --profile web add dsh-mascot-pet
@@ -236,6 +256,7 @@ pnpm --filter dsh-better-sidebar-mcp test
 
 ## 🗺️ 路线图 (Roadmap)
 
+- [x] **工业级极客增强侧边栏（集成 SSH 远程连接、PTY 终端与 8 套 Agent 终端工具）**
 - [x] **MCP 多源自动扫描与 Tool Tester 在线调试沙箱**
 - [x] **CoT 视觉多模态模型流式思维链深度解析**
 - [x] **小鲸鱼姬 2.0 灵动桌宠（3 套立绘 + 650ms 四级盲打刷词）**

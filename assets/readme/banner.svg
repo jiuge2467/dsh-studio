@@ -55,12 +55,12 @@
 
   <!-- Top Status Badge -->
   <g transform="translate(600, 60)">
-    <rect x="-160" y="-16" width="320" height="32" rx="16" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.6" />
-    <circle cx="-135" cy="0" r="5" fill="#10b981">
+    <rect x="-175" y="-16" width="350" height="32" rx="16" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.6" />
+    <circle cx="-150" cy="0" r="5" fill="#10b981">
       <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
     </circle>
-    <text x="-120" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#93c5fd" letter-spacing="1">
-      NEXT-GEN AGENT WORKBENCH · DSH
+    <text x="-135" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#93c5fd" letter-spacing="1">
+      NEXT-GEN AGENT WORKBENCH · SSH &amp; MCP
     </text>
   </g>
 
@@ -74,43 +74,42 @@
   <!-- Subtitle / Tagline -->
   <g transform="translate(600, 195)">
     <text text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="400" fill="#cbd5e1">
-      现代化 DeepSeek Harness 全栈增强工作台 · 多源 MCP 可视化调试中枢 · 视觉思考引擎 · 灵动桌宠
+      现代化 DeepSeek Harness 全栈增强工作台 · 远程 SSH 极客侧边栏 · MCP 可视化调试中枢 · 灵动伴侣
     </text>
   </g>
 
   <!-- 3 Feature Highlight Glass Cards -->
-  <!-- Card 1: MCP Hub -->
+  <!-- Card 1: Industrial Sidebar & SSH -->
   <g transform="translate(100, 245)" filter="url(#subtle-shadow)">
     <rect width="310" height="125" rx="12" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
     <rect x="0" y="0" width="310" height="3" rx="1.5" fill="url(#accent-cyan)" />
     <!-- Icon -->
     <g transform="translate(24, 28)">
       <rect width="36" height="36" rx="8" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1" />
-      <path d="M 12 18 L 24 18 M 18 12 L 18 24 M 14 14 L 22 22" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+      <path d="M 12 15 L 18 20 L 12 25 M 19 25 L 25 25" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </g>
-    <text x="72" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffffff">MCP 调试沙箱与中枢</text>
-    <text x="72" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#38bdf8">dsh-better-sidebar-mcp</text>
-    <text x="24" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">全域多源自动扫描 · 10+ 官方预设</text>
-    <text x="24" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">Tool Tester 在线沙箱 · 毫秒级测速</text>
+    <text x="72" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffffff">SSH 远程终端 &amp; 侧边栏</text>
+    <text x="72" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#38bdf8">dsh-better-sidebar</text>
+    <text x="24" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">远程 SSH 直连 · 8 套 Agent 终端工具</text>
+    <text x="24" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">Explorer 代码高亮 · Git Diff 可视化</text>
   </g>
 
-  <!-- Card 2: CoT Vision -->
+  <!-- Card 2: MCP Hub & Sandbox -->
   <g transform="translate(445, 245)" filter="url(#subtle-shadow)">
     <rect width="310" height="125" rx="12" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
     <rect x="0" y="0" width="310" height="3" rx="1.5" fill="url(#accent-purple)" />
     <!-- Icon -->
     <g transform="translate(24, 28)">
       <rect width="36" height="36" rx="8" fill="#9333ea" fill-opacity="0.2" stroke="#c084fc" stroke-width="1" />
-      <circle cx="18" cy="18" r="7" fill="none" stroke="#c084fc" stroke-width="2" />
-      <path d="M 18 11 L 18 15 M 18 21 L 18 25 M 11 18 L 15 18 M 21 18 L 25 18" stroke="#c084fc" stroke-width="1.5" />
+      <path d="M 12 18 L 24 18 M 18 12 L 18 24 M 14 14 L 22 22" stroke="#c084fc" stroke-width="2" stroke-linecap="round" />
     </g>
-    <text x="72" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffffff">视觉多模态与 CoT 穿透</text>
-    <text x="72" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#c084fc">dsh-tool-describe-image</text>
-    <text x="24" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">MiMo 深度思考链无损流式捕获</text>
-    <text x="24" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">图形化连通性测速 · 模型列表探测</text>
+    <text x="72" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffffff">MCP 多源中枢 &amp; 沙箱</text>
+    <text x="72" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#c084fc">dsh-better-sidebar-mcp</text>
+    <text x="24" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">全域多源自动扫描 · 10+ 官方预设</text>
+    <text x="24" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">Tool Tester 在线沙箱 · 0 Token 测速</text>
   </g>
 
-  <!-- Card 3: Mascot Pet -->
+  <!-- Card 3: Mascot Pet & CoT -->
   <g transform="translate(790, 245)" filter="url(#subtle-shadow)">
     <rect width="310" height="125" rx="12" fill="#1e293b" fill-opacity="0.75" stroke="#334155" stroke-width="1" />
     <rect x="0" y="0" width="310" height="3" rx="1.5" fill="url(#accent-emerald)" />
@@ -121,9 +120,9 @@
       <circle cx="16" cy="17" r="1.5" fill="#34d399" />
       <circle cx="20" cy="17" r="1.5" fill="#34d399" />
     </g>
-    <text x="72" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffffff">小鲸鱼姬 2.0 灵动桌宠</text>
+    <text x="72" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#ffffff">小鲸鱼姬 2.0 &amp; CoT 思考</text>
     <text x="72" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500" fill="#34d399">dsh-mascot-pet</text>
-    <text x="24" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">3套高精立绘 · 650ms 四级盲打刷题</text>
+    <text x="24" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">3套高精立绘 · 650ms 极速盲打背词</text>
     <text x="24" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">零食投喂CD · 极客游戏 · 全站总账本</text>
   </g>
 

@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <strong>🔥 Modern DeepSeek Harness Full-Stack Workbench · Multi-Source MCP Debugging Hub · CoT Vision Engine · Geek Mascot Companion</strong>
+  <strong>🔥 Modern DeepSeek Harness Full-Stack Workbench · Remote SSH Geek Sidebar · Multi-Source MCP Debugging Hub · CoT Vision Engine · Geek Mascot Companion</strong>
 </p>
 
 <p align="center">
   <a href="README.md">简体中文</a> •
   <a href="README.en.md">English</a> •
-  <a href="#-why-dsh-studio">Highlights</a> •
+  <a href="#-what-is-added-over-upstream-deepseek-harness-dsh">What's New</a> •
   <a href="#-competitive-matrix">Comparison</a> •
   <a href="#-core-feature-matrix">Features</a> •
   <a href="#-quick-start">Quick Start</a>
@@ -27,14 +27,24 @@
 
 ---
 
-## 💡 Why DSH Studio?
+## 🆚 What is Added over Upstream DeepSeek Harness (DSH)?
 
-**DSH Studio** (DeepSeek Harness Studio) is a **next-generation full-stack enhanced workbench and plugin suite** built for AI developers and agent geeks. It overcomes the complex configuration and black-box debugging bottlenecks of traditional agent clients, integrating industrial-grade developer workflows, CoT visual reasoning streams, and an interactive anime mascot companion:
+While upstream **DeepSeek Harness (DSH)** provides the low-level Agent runtime loop and CLI kernel, **DSH Studio** is the **full-stack industrial-grade enhanced workbench and micro-frontend ecosystem**:
 
-* 🔌 **Pioneering MCP Online Sandbox**: Zero token cost. Automatically parses JSON Schema parameters, initiates real JSON-RPC handshakes, and provides millisecond latency benchmarks without invoking LLMs.
-* 🧠 **CoT Visual Reasoning Stream Penetration**: Captures `reasoning_content` from multimodal vision models with deep thinking (e.g., Xiaomi MiMo), preventing blank screens and dropped reasoning chains common in traditional UI frameworks.
-* 🐬 **Little Whale Maid 2.0 Geek Mascot**: 3 high-definition skin sets, 650ms CET-4 blind-typing flashcards, snack feeding cooldown (CD) system, retro mini-arcade, and persistent all-time token billing ledger.
-* 🧰 **Industrial-Grade Enhanced Sidebar**: Code syntax highlighting explorer, visual Git commit history and diff inspection, embedded persistent ConPTY/PTY terminal.
+<p align="center">
+  <img src="assets/readme/dsh-vs-studio.svg" alt="DSH vs DSH Studio Comparison" width="100%" />
+</p>
+
+| Dimension | Upstream DeepSeek Harness (DSH) | 🌟 **DSH Studio (Ours)** |
+| :--- | :--- | :--- |
+| **🌐 Remote SSH & Terminal** | ❌ Basic local subprocess only, no persistent terminal, no remote SSH | ✅ **Integrated Remote SSH Direct Connection & ConPTY / PTY Terminal**, multi-tab support & **8 Dedicated Agent Terminal Tools** |
+| **🧰 IDE-Grade Workflow** | ❌ Chat-only conversation window, no file browsing or git diff | ✅ **Industrial Enhanced Sidebar**: Explorer syntax-highlighted code preview & search, Git branch switching, visual commit log & Diff |
+| **🔌 MCP Discovery** | ❌ Manual single JSON file editing only | ✅ **All-Source Auto Discovery** (`.vscode`, Cursor, Claude, Antigravity) + 10+ Curated Official Presets Carousel |
+| **🧪 MCP Online Sandbox** | ❌ None, requires prompting LLM with token cost | ✅ **Tool Tester Sandbox** (Schema form generation, 1-click test mock data, real RPC handshake & **0 Token Millisecond Latency Probe**) |
+| **🧠 Visual CoT Reasoning** | ❌ Cannot stream multimodal `reasoning_content`, prone to blank screens | ✅ **Native CoT Vision Engine** (Stream-captures Xiaomi MiMo deep thinking chains with foldable typewriter rendering) |
+| **🐬 Mascot Companion** | ❌ None, idle waiting during long generation | ✅ **Little Whale Maid 2.0** (3 HD skins + **650ms Speed CET-4 Blind Flashcards** + snack feeding CD system + retro mini-arcade) |
+| **💰 Cost Transparency** | ⚠️ Single-session rough estimation only, lost on refresh | ✅ **All-Time Billing Ledger (Persistent)** + Real-time token bottom probe + Monthly dynamic budget progress bar |
+| **🧩 Extensibility** | Static single-bundle composition | **Hot-pluggable Micro-frontend Plugins** + Drag-and-drop customizable sidebar card tabs |
 
 ---
 
@@ -42,19 +52,40 @@
 
 | Dimension | Traditional Agent Client<br>*(Claude Desktop)* | Web Chat UI<br>*(LobeChat / Dify)* | AI Code Editor<br>*(Cursor / Continue)* | 🌟 **DSH-Studio**<br>*(Ours)* |
 | :--- | :--- | :--- | :--- | :--- |
+| **🌐 Remote SSH & Terminal** | ❌ No terminal / SSH | ❌ Chat-only interface | ⚠️ Editor terminal detached from Agent | ✅ **Integrated SSH Remote Sessions + 8 Agent Terminal Tools** |
+| **🧰 All-in-One IDE Workflow** | ❌ No sidebar / file tree | ❌ Chat-only interface | ⚠️ Editor-bound, detached agent | ✅ **Industrial Sidebar** (Explorer preview + Git Diff + PTY Terminal) |
 | **🔌 MCP Discovery** | ❌ Manual JSON file edits only | ⚠️ Heavy backend plugin setup | ⚠️ Single local config only | ✅ **All-Source Auto Discovery** (`.vscode`, Cursor, Claude, Antigravity) |
 | **🧪 MCP Online Sandbox** | ❌ None, requires prompting LLM | ❌ No isolated tool tester | ❌ No single-tool testing UI | ✅ **Tool Tester Sandbox** (Schema form generation, 1-click test data, 0 token latency probe) |
 | **🧠 Visual CoT Reasoning** | ❌ Cannot stream reasoning | ⚠️ Prone to blank screen/dropped tokens | ❌ General image input only | ✅ **Native CoT Vision Engine** (Stream-captures `reasoning_content` seamlessly) |
 | **🐬 Mascot Companion** | ❌ Cold, static interface | ❌ None | ❌ None | ✅ **Little Whale Maid 2.0** (3 skins + empathy states + feeding CD + mini-games) |
 | **⚡ Inference Downtime** | ❌ Idle waiting | ❌ None | ❌ None | ✅ **650ms Word Flashcards** (A/B/C/D keyboard blind-typing during generation gaps) |
 | **💰 Cost Transparency** | ❌ No global ledger | ⚠️ Session-only estimation | ⚠️ Quota percentage only | ✅ **All-Time Billing Ledger** + Real-time token probes & monthly budget progress |
-| **🧰 All-in-One IDE Workflow** | ❌ No sidebar / terminal | ❌ Chat-only interface | ⚠️ Editor-bound, detached agent | ✅ **Industrial Sidebar** (Explorer preview + Git Diff + PTY Terminal) |
 
 ---
 
 ## 🌟 Core Feature Matrix
 
-### 🔌 1. MCP Multi-Source Management & Online RPC Testing Sandbox (`dsh-better-sidebar-mcp`)
+### 🧰 1. Industrial-Grade Enhanced Sidebar & Remote SSH Terminal (`dsh-better-sidebar`)
+
+An all-in-one developer productivity suite for full-stack engineering and operations:
+
+* **🌐 Remote SSH Sessions & Embedded Persistent PTY Terminal**:
+  - Multi-tab terminal management (Local Bash / PowerShell / WSL / **Direct Remote SSH Host Sessions**);
+  - Auto-reconnect and immersive full-screen terminal mode;
+  - **8 Built-in Agent Terminal Tools**:
+    `terminal_create`, `terminal_send`, `terminal_read`, `terminal_wait_for`, `terminal_resize`, `terminal_signal`, `terminal_close`, `terminal_list`,
+    empowering autonomous AI agents to operate local and remote servers effortlessly.
+* **📁 Explorer**:
+  - Tree-structured workspace file navigation and fast search;
+  - Real-time syntax-highlighted code previews (Rust, Go, Python, TypeScript, C++, SQL, YAML, JSON and 15+ languages).
+* **🌿 Source Control (Git)**:
+  - Branch switching and working directory state tracking;
+  - Visual commit history inspection and file Diff highlighting with one-click revert.
+* **🧩 Modular Tab Assembly**: Freely drag, reorder, and toggle tab cards in Settings > Sidebar Cards.
+
+---
+
+### 🔌 2. MCP Multi-Source Management & Online RPC Testing Sandbox (`dsh-better-sidebar-mcp`)
 
 Click "MCP Management" in the sidebar to access full-suite configuration sniffing, 10+ official presets carousel, and the isolated **Tool Tester Online Sandbox**:
 
@@ -69,7 +100,7 @@ Click "MCP Management" in the sidebar to access full-suite configuration sniffin
 
 ---
 
-### 🧠 2. CoT Visual Reasoning Stream Penetration Engine (`dsh-tool-describe-image`)
+### 🧠 3. CoT Visual Reasoning Stream Penetration Engine (`dsh-tool-describe-image`)
 
 Engineered for multimodal vision models with deep thinking, unlocking loss-free reasoning chain streaming and network benchmarking:
 
@@ -82,7 +113,7 @@ Engineered for multimodal vision models with deep thinking, unlocking loss-free 
 
 ---
 
-### 🐬 3. Little Whale Maid 2.0 Geek Mascot & Companion (`dsh-mascot-pet`)
+### 🐬 4. Little Whale Maid 2.0 Geek Mascot & Companion (`dsh-mascot-pet`)
 
 An interactive desktop companion docked to your workspace, fusing flashcard study, geek memes, snack feeding, and global billing ledgers:
 
@@ -138,17 +169,6 @@ An interactive desktop companion docked to your workspace, fusing flashcard stud
 
 ---
 
-### 🧰 4. Industrial-Grade Enhanced Sidebar (`dsh-better-sidebar`)
-
-IDE-grade feature suite integrated into DSH Web:
-
-* **Explorer**: Workspace file tree navigation, search, and syntax-highlighted code previews.
-* **Source Control (Git)**: Branch switching, visual commit logs, diff views, and one-click reverts.
-* **Embedded Persistent Terminal**: Integrated ConPTY / PTY sessions supporting autonomous agent tooling commands.
-* **Modular Tab Assembly**: Drag-and-drop ordering and toggles in Settings > Sidebar Cards.
-
----
-
 ## 🏗️ System Architecture
 
 <p align="center">
@@ -163,7 +183,7 @@ dsh-studio/
 │   ├── typert/                 # Type graph generator & RPC runtime registry
 │   └── host/                   # WebServer & micro-frontend host
 ├── plugins/                    # 🚀 Hot-pluggable micro-frontend plugins
-│   ├── dsh-better-sidebar/     # Enhanced sidebar container (Explorer, Git, Terminal)
+│   ├── dsh-better-sidebar/     # Industrial sidebar (SSH, ConPTY terminal, Explorer, Git)
 │   ├── dsh-better-sidebar-mcp/ # MCP multi-source scanner & RPC tester sandbox
 │   ├── dsh-mascot-pet/         # Mascot 2.0, speed flashcards & all-time ledger
 │   └── dsh-tool-describe-image/# CoT visual reasoning stream adapter
@@ -199,11 +219,11 @@ Open `http://127.0.0.1:3080` in your browser to start exploring!
 ### Option 2: Add Plugins to Existing DSH Environment
 
 ```bash
-# 1. Install MCP Manager & Testing Sandbox
-cd ~/.dsh && dsh plugin --profile web add dsh-better-sidebar-mcp
-
-# 2. Install Enhanced Sidebar Suite
+# 1. Install Industrial Enhanced Sidebar (SSH & Terminal)
 cd ~/.dsh && dsh plugin --profile web add dsh-better-sidebar
+
+# 2. Install MCP Manager & Testing Sandbox
+cd ~/.dsh && dsh plugin --profile web add dsh-better-sidebar-mcp
 
 # 3. Install Little Whale Maid Mascot Companion
 cd ~/.dsh && dsh plugin --profile web add dsh-mascot-pet

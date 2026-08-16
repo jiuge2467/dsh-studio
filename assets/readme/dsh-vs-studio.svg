@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+    <linearGradient id="studio-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <filter id="card-shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <rect width="1000" height="460" rx="14" fill="url(#vs-bg)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="50" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="800" fill="#f8fafc">
+    🆚 原生 DeepSeek Harness (DSH) vs 🌟 DSH Studio 全景进化
+  </text>
+  <text x="50" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">
+    从单一底层 Agent 运行时，全面进化为集成 SSH 终端、MCP 沙箱、视觉 CoT 穿透与桌宠的全栈工作台
+  </text>
+
+  <!-- Left Column: Upstream DSH -->
+  <g transform="translate(50, 90)" filter="url(#card-shadow)">
+    <rect width="425" height="340" rx="10" fill="#171e2e" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="4,4" />
+    <rect x="0" y="0" width="425" height="4" rx="2" fill="#ef4444" />
+
+    <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#f87171">
+      ⚠️ 原生 DSH (底层内核定位)
+    </text>
+
+    <g transform="translate(20, 48)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#cbd5e1">
+      <rect width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="21" fill="#fca5a5">❌ 终端能力: <tspan fill="#94a3b8">无持久化终端，无法直接 SSH 连接远程主机</tspan></text>
+
+      <rect y="42" width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="63" fill="#fca5a5">❌ 侧边栏: <tspan fill="#94a3b8">仅限纯 Chat 交互，无文件树浏览与 Git Diff</tspan></text>
+
+      <rect y="84" width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="105" fill="#fca5a5">❌ MCP 调试: <tspan fill="#94a3b8">无图形界面，必须向大模型提问消耗 Token 调试</tspan></text>
+
+      <rect y="126" width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="147" fill="#fca5a5">❌ 视觉思考: <tspan fill="#94a3b8">丢弃 MiMo 等模型的 reasoning_content 导致白屏</tspan></text>
+
+      <rect y="168" width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="189" fill="#fca5a5">❌ 伴侣系统: <tspan fill="#94a3b8">无桌宠与解压功能，等待模型推理过程极枯燥</tspan></text>
+
+      <rect y="210" width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="231" fill="#fca5a5">❌ 计费账本: <tspan fill="#94a3b8">仅单次会话临时估算，刷新页面历史数据全丢</tspan></text>
+
+      <rect y="252" width="385" height="34" rx="6" fill="#0f1420" />
+      <text x="12" y="273" fill="#fca5a5">❌ 碎片利用: <tspan fill="#94a3b8">大模型长思考生成期间只能干等</tspan></text>
+    </g>
+  </g>
+
+  <!-- Right Column: DSH Studio -->
+  <g transform="translate(525, 90)" filter="url(#card-shadow)">
+    <rect width="425" height="340" rx="10" fill="#131e33" stroke="#38bdf8" stroke-width="1.5" />
+    <rect x="0" y="0" width="425" height="4" rx="2" fill="url(#studio-accent)" />
+
+    <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#38bdf8">
+      🌟 DSH Studio (全栈增强工作台)
+    </text>
+
+    <g transform="translate(20, 48)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" fill="#e2e8f0">
+      <rect width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="21" fill="#38bdf8">✨ 远程 SSH 终端: <tspan fill="#ffffff">集成 SSH 主机直连 + 8 套 Agent 终端工具</tspan></text>
+
+      <rect y="42" width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="63" fill="#38bdf8">✨ 工业级侧边栏: <tspan fill="#ffffff">Explorer 语法高亮预览 + Git Diff 可视化</tspan></text>
+
+      <rect y="84" width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="105" fill="#38bdf8">✨ Tool Tester 沙箱: <tspan fill="#ffffff">JSON Schema 自动表单 + 0 Token 毫秒测速</tspan></text>
+
+      <rect y="126" width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="147" fill="#38bdf8">✨ CoT 视觉穿透: <tspan fill="#ffffff">流式捕获深度思维链，打字机展开/折叠渲染</tspan></text>
+
+      <rect y="168" width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="189" fill="#38bdf8">✨ 小鲸鱼姬 2.0: <tspan fill="#ffffff">3套立绘无缝切换 + 投喂CD/饥饿共情 + 微游戏厅</tspan></text>
+
+      <rect y="210" width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="231" fill="#38bdf8">✨ 全站持久账本: <tspan fill="#ffffff">All-Time Ledger 跨会话累计 + 月度预算进度</tspan></text>
+
+      <rect y="252" width="385" height="34" rx="6" fill="#0c1626" />
+      <text x="12" y="273" fill="#38bdf8">✨ 650ms 极速刷题: <tspan fill="#ffffff">A/B/C/D 全键盘盲打，充分利用生成间隙背单词</tspan></text>
+    </g>
+  </g>
+</svg>
