@@ -10,7 +10,7 @@
   <a href="README.md">简体中文</a> •
   <a href="README.en.md">English</a> •
   <a href="#-what-is-added-over-upstream-deepseek-harness-dsh">What's New</a> •
-  <a href="#-competitive-matrix">Comparison</a> •
+  <a href="#-real-ui-showcase">Real UI Showcase</a> •
   <a href="#-core-feature-matrix">Features</a> •
   <a href="#-quick-start">Quick Start</a>
 </p>
@@ -27,15 +27,21 @@
 
 ---
 
+## 🖥️ Real UI Showcase
+
+<p align="center">
+  <img src="assets/readme/real-ui-hero-main.png" alt="DSH Studio Real UI Main Workbench" width="100%" style="border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);" />
+  <br />
+  <em>▲ DSH Studio Real Full-Stack Workbench UI: Multi-model chat, enhanced sidebar, mascot companion &amp; real-time token probe</em>
+</p>
+
+---
+
 ## 🆚 What is Added over Upstream DeepSeek Harness (DSH)?
 
 While upstream **DeepSeek Harness (DSH)** provides the low-level Agent runtime loop and CLI kernel, **DSH Studio** is the **full-stack industrial-grade enhanced workbench and micro-frontend ecosystem**:
 
-<p align="center">
-  <img src="assets/readme/dsh-vs-studio.svg" alt="DSH vs DSH Studio Comparison" width="100%" />
-</p>
-
-| Dimension | Upstream DeepSeek Harness (DSH) | 🌟 **DSH Studio (Ours)** |
+| Dimension | Upstream DeepSeek Harness (DSH) | 🌟 **DSH Studio (Real Features)** |
 | :--- | :--- | :--- |
 | **🌐 Remote SSH & Terminal** | ❌ Basic local subprocess only, no persistent terminal, no remote SSH | ✅ **Integrated Remote SSH Direct Connection & ConPTY / PTY Terminal**, multi-tab support & **8 Dedicated Agent Terminal Tools** |
 | **🧰 IDE-Grade Workflow** | ❌ Chat-only conversation window, no file browsing or git diff | ✅ **Industrial Enhanced Sidebar**: Explorer syntax-highlighted code preview & search, Git branch switching, visual commit log & Diff |
@@ -48,26 +54,17 @@ While upstream **DeepSeek Harness (DSH)** provides the low-level Agent runtime l
 
 ---
 
-## 📊 Competitive Matrix
-
-| Dimension | Traditional Agent Client<br>*(Claude Desktop)* | Web Chat UI<br>*(LobeChat / Dify)* | AI Code Editor<br>*(Cursor / Continue)* | 🌟 **DSH-Studio**<br>*(Ours)* |
-| :--- | :--- | :--- | :--- | :--- |
-| **🌐 Remote SSH & Terminal** | ❌ No terminal / SSH | ❌ Chat-only interface | ⚠️ Editor terminal detached from Agent | ✅ **Integrated SSH Remote Sessions + 8 Agent Terminal Tools** |
-| **🧰 All-in-One IDE Workflow** | ❌ No sidebar / file tree | ❌ Chat-only interface | ⚠️ Editor-bound, detached agent | ✅ **Industrial Sidebar** (Explorer preview + Git Diff + PTY Terminal) |
-| **🔌 MCP Discovery** | ❌ Manual JSON file edits only | ⚠️ Heavy backend plugin setup | ⚠️ Single local config only | ✅ **All-Source Auto Discovery** (`.vscode`, Cursor, Claude, Antigravity) |
-| **🧪 MCP Online Sandbox** | ❌ None, requires prompting LLM | ❌ No isolated tool tester | ❌ No single-tool testing UI | ✅ **Tool Tester Sandbox** (Schema form generation, 1-click test data, 0 token latency probe) |
-| **🧠 Visual CoT Reasoning** | ❌ Cannot stream reasoning | ⚠️ Prone to blank screen/dropped tokens | ❌ General image input only | ✅ **Native CoT Vision Engine** (Stream-captures `reasoning_content` seamlessly) |
-| **🐬 Mascot Companion** | ❌ Cold, static interface | ❌ None | ❌ None | ✅ **Little Whale Maid 2.0** (3 skins + empathy states + feeding CD + mini-games) |
-| **⚡ Inference Downtime** | ❌ Idle waiting | ❌ None | ❌ None | ✅ **650ms Word Flashcards** (A/B/C/D keyboard blind-typing during generation gaps) |
-| **💰 Cost Transparency** | ❌ No global ledger | ⚠️ Session-only estimation | ⚠️ Quota percentage only | ✅ **All-Time Billing Ledger** + Real-time token probes & monthly budget progress |
-
----
-
-## 🌟 Core Feature Matrix
+## 🌟 Core Features & Real UI Screenshots
 
 ### 🧰 1. Industrial-Grade Enhanced Sidebar & Remote SSH Terminal (`dsh-better-sidebar`)
 
 An all-in-one developer productivity suite for full-stack engineering and operations:
+
+<p align="center">
+  <img src="assets/readme/real-ui-right-panel.png" alt="DSH Real Sidebar and Tool Panels" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <br />
+  <em>▲ Real Screenshot: Multi-function enhanced sidebar tabs, task boards, and workflow cards</em>
+</p>
 
 * **🌐 Remote SSH Sessions & Embedded Persistent PTY Terminal**:
   - Multi-tab terminal management (Local Bash / PowerShell / WSL / **Direct Remote SSH Host Sessions**);
@@ -75,13 +72,18 @@ An all-in-one developer productivity suite for full-stack engineering and operat
   - **8 Built-in Agent Terminal Tools**:
     `terminal_create`, `terminal_send`, `terminal_read`, `terminal_wait_for`, `terminal_resize`, `terminal_signal`, `terminal_close`, `terminal_list`,
     empowering autonomous AI agents to operate local and remote servers effortlessly.
-* **📁 Explorer**:
+* **📁 Explorer & Code Syntax Preview**:
   - Tree-structured workspace file navigation and fast search;
   - Real-time syntax-highlighted code previews (Rust, Go, Python, TypeScript, C++, SQL, YAML, JSON and 15+ languages).
-* **🌿 Source Control (Git)**:
+* **🌿 Source Control (Git) & Visual Commit Graph**:
   - Branch switching and working directory state tracking;
   - Visual commit history inspection and file Diff highlighting with one-click revert.
-* **🧩 Modular Tab Assembly**: Freely drag, reorder, and toggle tab cards in Settings > Sidebar Cards.
+
+<p align="center">
+  <img src="assets/readme/real-ui-git-graph.png" alt="DSH Real Git Graph and Version Control" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <br />
+  <em>▲ Real Screenshot: Integrated Git visual graph, commit history, and branch control</em>
+</p>
 
 ---
 
@@ -90,7 +92,9 @@ An all-in-one developer productivity suite for full-stack engineering and operat
 Click "MCP Management" in the sidebar to access full-suite configuration sniffing, 10+ official presets carousel, and the isolated **Tool Tester Online Sandbox**:
 
 <p align="center">
-  <img src="assets/readme/mcp-flow.svg" alt="MCP Multi-source Scanning and Tool Tester Sandbox" width="100%" />
+  <img src="assets/readme/real-ui-mcp-plugins.png" alt="DSH Real MCP and Plugins Management UI" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <br />
+  <em>▲ Real Screenshot: Multi-source MCP &amp; plugins visual management hub with live toggles</em>
 </p>
 
 * **Multi-Source Auto-Aggregation**: Automatically scans and detects workspace configs (`./mcp.json`, `.vscode/mcp.json`, `.cursor/mcp.json`, `.agents/mcp_config.json`) and global environments (Claude Desktop, Cursor, Antigravity/Gemini, `~/.dsh/mcp.json`).
@@ -105,7 +109,10 @@ Click "MCP Management" in the sidebar to access full-suite configuration sniffin
 Engineered for multimodal vision models with deep thinking, unlocking loss-free reasoning chain streaming and network benchmarking:
 
 <p align="center">
-  <img src="assets/readme/cot-architecture.svg" alt="CoT Vision Reasoning Stream Architecture" width="100%" />
+  <img src="assets/readme/real-ui-cot-settings.png" alt="DSH Real CoT Vision Settings and Latency Probe" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <img src="assets/readme/real-ui-cot-tool-call.png" alt="DSH Real CoT Vision Agent Tool Execution" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <br />
+  <em>▲ Real Screenshot: Left shows CoT vision probe &amp; latency benchmark; Right shows live Agent tool reasoning stream</em>
 </p>
 
 * **Chain of Thought (CoT) Compatibility**: Tailored for models with deep reasoning (e.g., Xiaomi MiMo). Even when initial stream `content` is empty, it parses `reasoning_content` without latency or timeout.
@@ -116,6 +123,13 @@ Engineered for multimodal vision models with deep thinking, unlocking loss-free 
 ### 🐬 4. Little Whale Maid 2.0 Geek Mascot & Companion (`dsh-mascot-pet`)
 
 An interactive desktop companion docked to your workspace, fusing flashcard study, geek memes, snack feeding, and global billing ledgers:
+
+<p align="center">
+  <img src="assets/readme/real-ui-pet-chat.png" alt="DSH Real Mascot Pet Chat" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <img src="assets/readme/real-ui-pet-panel.png" alt="DSH Real Mascot Pet Interactive Panel" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <br />
+  <em>▲ Real Screenshot: Left shows docked mascot chat bubbles; Right shows mascot action dashboard &amp; feeding center</em>
+</p>
 
 #### 👗 3 High-Definition Seamless Skins
 <table>
@@ -187,7 +201,7 @@ dsh-studio/
 │   ├── dsh-better-sidebar-mcp/ # MCP multi-source scanner & RPC tester sandbox
 │   ├── dsh-mascot-pet/         # Mascot 2.0, speed flashcards & all-time ledger
 │   └── dsh-tool-describe-image/# CoT visual reasoning stream adapter
-├── assets/readme/              # 📸 High-res showcase graphics & vector diagrams
+├── assets/readme/              # 📸 Real UI screenshots and vector infographics
 └── docs/                       # Architecture specs, PRDs, and automated test reports
 ```
 

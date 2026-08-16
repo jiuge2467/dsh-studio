@@ -10,7 +10,7 @@
   <a href="README.md">简体中文</a> •
   <a href="README.en.md">English</a> •
   <a href="#-与原生-deepseek-harness-dsh-对比我们增加了什么">与原生对比</a> •
-  <a href="#-竞品多维对比矩阵">竞品对比</a> •
+  <a href="#-真实界面实机展示-real-ui-showcase">实机展示</a> •
   <a href="#-核心功能图文深度矩阵">功能矩阵</a> •
   <a href="#-30-秒极速上手">快速开始</a>
 </p>
@@ -27,15 +27,21 @@
 
 ---
 
+## 🖥️ 真实界面实机展示 (Real UI Showcase)
+
+<p align="center">
+  <img src="assets/readme/real-ui-hero-main.png" alt="DSH Studio Real UI Main Workbench" width="100%" style="border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);" />
+  <br />
+  <em>▲ DSH Studio 真实全栈工作台主界面：集成多模型对话、增强侧边栏、小鲸鱼姬桌宠与实时 Token 探针</em>
+</p>
+
+---
+
 ## 🆚 与原生 DeepSeek Harness (DSH) 对比：我们增加了什么？
 
 官方原生 **DeepSeek Harness (DSH)** 是一个底层的 Agent 运行时内核，侧重于核心 Loop 与基础 CLI。而 **DSH Studio** 是在上游基础上的**全栈工业级增强工作台与微前端生态**：
 
-<p align="center">
-  <img src="assets/readme/dsh-vs-studio.svg" alt="DSH vs DSH Studio Comparison" width="100%" />
-</p>
-
-| 功能模块 | 原生 DeepSeek Harness (DSH) | 🌟 **DSH Studio (本项目)** |
+| 功能模块 | 原生 DeepSeek Harness (DSH) | 🌟 **DSH Studio (本项目真实特性)** |
 | :--- | :--- | :--- |
 | **🌐 远程 SSH & PTY 终端** | ❌ 仅支持基础本地子进程，无持久化终端，无法直连远程服务器 | ✅ **集成完整远程 SSH 主机直连 & ConPTY / PTY 终端**，支持多终端 Tab 与 **8 套 Agent 终端工具直连操控** |
 | **🧰 IDE 级开发工作流** | ❌ 仅限纯 Chat 会话面板，无法浏览代码与 Git 变更 | ✅ **工业级全功能侧边栏**：Explorer 代码高亮预览与搜索、Git 分支切换、可视化提交历史与 Diff 差异对比 |
@@ -48,26 +54,17 @@
 
 ---
 
-## 📊 竞品多维对比矩阵
-
-| 对比维度 | 传统 Agent 客户端<br>*(Claude Desktop)* | 主流 Web 对话面板<br>*(LobeChat / Dify)* | AI 代码编辑器<br>*(Cursor / Continue)* | 🌟 **DSH-Studio**<br>*(本项目)* |
-| :--- | :--- | :--- | :--- | :--- |
-| **🌐 远程 SSH 与终端** | ❌ 无内置终端与 SSH | ❌ 仅限纯 Web 对话 | ⚠️ 内置终端但缺少 Agent 专属工具网关 | ✅ **集成 SSH 远程会话 + 8 套 Agent 终端交互工具** |
-| **🧰 一体化开发闭环** | ❌ 无侧边栏与文件树 | ❌ 纯 Chat 交互 | ⚠️ 编辑器内置但与 Agent 隔离 | ✅ **工业级侧边栏** (Explorer 语法预览 + Git Diff + PTY 终端) |
-| **🔌 MCP 扫描聚合** | ❌ 仅支持手工改单 JSON | ⚠️ 依赖后端插件或复杂配置 | ⚠️ 仅限本地单配置 | ✅ **全域多源自动扫描** (`.vscode`, Cursor, Claude, Antigravity 一键聚合) |
-| **🧪 MCP 在线沙箱** | ❌ 无，必须提问大模型触发 | ❌ 无单工具隔离调试能力 | ❌ 无单工具调试界面 | ✅ **Tool Tester 独立沙箱** (Schema 动态表单、一键填参、0 Token 毫秒测速) |
-| **🧠 视觉思考 (CoT)** | ❌ 无法解析视觉思考链 | ⚠️ 部分模型易白屏或丢失 | ❌ 仅支持通用图片输入 | ✅ **独创 CoT 视觉引擎** (流式捕获 `reasoning_content`，思维链无损透传) |
-| **🐬 极客陪伴与桌宠** | ❌ 严肃冷感界面 | ❌ 无伴侣系统 | ❌ 无伴侣系统 | ✅ **小鲸鱼姬 2.0** (3套高精立绘 + 状态共情 + 投喂CD + 极客解压游戏) |
-| **⚡ 极速空隙利用** | ❌ 生成时只能干等 | ❌ 无 | ❌ 无 | ✅ **四级极速刷词** (650ms 自动跳题、A/B/C/D 全键盘盲打，碎片时间背词) |
-| **💰 计费与预算透明** | ❌ 无全局统计 | ⚠️ 仅当前会话粗略统计 | ⚠️ 仅显示额度百分比 | ✅ **全站持久化总账本 (All-Time Ledger)** + 实时 Token 探针与月度预算条 |
-
----
-
-## 🌟 核心功能图文深度矩阵
+## 🌟 核心功能真实实机截图与图文深度矩阵
 
 ### 🧰 1. 工业级极客增强侧边栏与远程 SSH 终端 (`dsh-better-sidebar`)
 
 为 DSH Web 端提供面向工业级全栈开发与运维的**一体化侧边栏套件**：
+
+<p align="center">
+  <img src="assets/readme/real-ui-right-panel.png" alt="DSH Real Sidebar and Tool Panels" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <br />
+  <em>▲ 真实实机截图：多功能增强侧边栏面板、任务管理与工作流面板</em>
+</p>
 
 * **🌐 远程 SSH 会话直连与持久化 PTY 终端**：
   - 支持多 Tab 会话管理（本地 Bash / PowerShell / WSL / **远程 SSH 主机免密直连**）；
@@ -75,13 +72,18 @@
   - **内置 8 套专用 Agent 终端控制工具**：
     `terminal_create`, `terminal_send`, `terminal_read`, `terminal_wait_for`, `terminal_resize`, `terminal_signal`, `terminal_close`, `terminal_list`，
     赋予 AI Agent 直接操控远程服务器与本地终端执行自动化运维任务的强大能力。
-* **📁 资源管理器 (Explorer)**：
+* **📁 资源管理器 (Explorer) 与代码高亮预览**：
   - 工业级树状工程文件浏览、秒级文件名搜索定位；
   - 集成代码语法高亮即时预览（支持 Rust, Go, Python, TypeScript, C++, SQL, YAML, JSON 等 15+ 语言）。
-* **🌿 源代码管理 (Git)**：
+* **🌿 源代码管理 (Git) 与可视化分支图谱**：
   - 实时分支切换与状态追踪；
   - 可视化提交历史记录、工作区变更文件 Diff 差异对比高亮与一键撤销。
-* **🧩 侧边卡片按需装配**：在「设置 > 侧边卡片」中自由拖拽调整顺序与独立启停。
+
+<p align="center">
+  <img src="assets/readme/real-ui-git-graph.png" alt="DSH Real Git Graph and Version Control" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <br />
+  <em>▲ 真实实机截图：集成 Git 可视化图谱、提交日志与分支管理</em>
+</p>
 
 ---
 
@@ -90,7 +92,9 @@
 在侧边栏点击「MCP 管理」即可进入。系统提供全自动的多源配置嗅探、10+ 官方热门预设轮播与独立的 **Tool Tester 在线沙箱**：
 
 <p align="center">
-  <img src="assets/readme/mcp-flow.svg" alt="MCP Multi-source Scanning and Tool Tester Sandbox" width="100%" />
+  <img src="assets/readme/real-ui-mcp-plugins.png" alt="DSH Real MCP and Plugins Management UI" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <br />
+  <em>▲ 真实实机截图：多源 MCP 与插件可视化管理中枢、一键启停与在线状态检测</em>
 </p>
 
 * **多源自动扫描聚合**：自动识别工作区（`./mcp.json`, `.vscode/mcp.json`, `.cursor/mcp.json`, `.agents/mcp_config.json`）与全局环境（Claude Desktop, Cursor, Antigravity/Gemini, `~/.dsh/mcp.json`）；
@@ -105,7 +109,10 @@
 专为带深度思考能力的多模态大模型定制，提供无损的思维链流式穿透与图形化测速：
 
 <p align="center">
-  <img src="assets/readme/cot-architecture.svg" alt="CoT Vision Reasoning Stream Architecture" width="100%" />
+  <img src="assets/readme/real-ui-cot-settings.png" alt="DSH Real CoT Vision Settings and Latency Probe" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <img src="assets/readme/real-ui-cot-tool-call.png" alt="DSH Real CoT Vision Agent Tool Execution" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <br />
+  <em>▲ 真实实机截图：左图为 CoT 视觉模型图形化连通性测速与探测设置；右图为 Agent 实机流式调用看图与思考链穿透效果</em>
 </p>
 
 * **思考链 (CoT Reasoning) 智能兼容**：深度适配带深度思考的多模态视觉模型（如 Xiaomi MiMo 等）。即使模型前期流式 `content` 为空，也能无缝解析 `reasoning_content`，输出完整思考推导过程；
@@ -116,6 +123,13 @@
 ### 🐬 4. 小鲸鱼姬 2.0 灵动极客桌宠与伴侣 (`dsh-mascot-pet`)
 
 常驻开发界面的灵动桌宠伴侣，将极客刷题、名梗互动、饱腹投喂与全站账本深度融合：
+
+<p align="center">
+  <img src="assets/readme/real-ui-pet-chat.png" alt="DSH Real Mascot Pet Chat" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <img src="assets/readme/real-ui-pet-panel.png" alt="DSH Real Mascot Pet Interactive Panel" width="48%" style="border-radius: 8px; vertical-align: top;" />
+  <br />
+  <em>▲ 真实实机截图：左图为桌宠常驻对话与情绪状态气泡；右图为桌宠互动面板、零食投喂与功能卡片</em>
+</p>
 
 #### 👗 3 套高精无痕立绘平滑切换
 <table>
@@ -187,7 +201,7 @@ dsh-studio/
 │   ├── dsh-better-sidebar-mcp/ # MCP 多源扫描、预设与在线 RPC 调试沙箱
 │   ├── dsh-mascot-pet/         # 小鲸鱼姬 2.0 桌宠、极速背单词与全站账本
 │   └── dsh-tool-describe-image/# CoT 视觉深度思考流适配器
-├── assets/readme/              # 📸 README 高清配图与矢量架构图谱
+├── assets/readme/              # 📸 README 真实实机截图与矢量图谱
 └── docs/                       # 架构设计、PRD 与自动化测试报告
 ```
 
