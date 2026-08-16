@@ -10,7 +10,7 @@
   <a href="README.md">简体中文</a> •
   <a href="README.en.md">English</a> •
   <a href="#-与原生-deepseek-harness-dsh-对比我们增加了什么">与原生对比</a> •
-  <a href="#-真实界面实机展示-real-ui-showcase">实机展示</a> •
+  <a href="#-真实实机界面一览-real-ui-showcase">实机展示</a> •
   <a href="#-核心功能图文深度矩阵">功能矩阵</a> •
   <a href="#-30-秒极速上手">快速开始</a>
 </p>
@@ -27,12 +27,12 @@
 
 ---
 
-## 🖥️ 真实界面实机展示 (Real UI Showcase)
+## 🖥️ 真实实机界面一览 (Real UI Showcase)
 
 <p align="center">
   <img src="assets/readme/real-ui-hero-main.png" alt="DSH Studio Real UI Main Workbench" width="100%" style="border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);" />
   <br />
-  <em>▲ DSH Studio 真实全栈工作台主界面：集成多模型对话、增强侧边栏、小鲸鱼姬桌宠与实时 Token 探针</em>
+  <em>▲ DSH Studio 真实全栈工作台主界面：集成多模型对话、增强极客侧边栏、小鲸鱼姬桌宠与实时 Token 探针</em>
 </p>
 
 ---
@@ -54,14 +54,14 @@
 
 ---
 
-## 🌟 核心功能真实实机截图与图文深度矩阵
+## 🌟 核心功能图文深度矩阵
 
 ### 🧰 1. 工业级极客增强侧边栏与远程 SSH 终端 (`dsh-better-sidebar`)
 
 为 DSH Web 端提供面向工业级全栈开发与运维的**一体化侧边栏套件**：
 
 <p align="center">
-  <img src="assets/readme/real-ui-right-panel.png" alt="DSH Real Sidebar and Tool Panels" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <img src="assets/readme/real-ui-right-panel.png" alt="DSH Real Sidebar and Tool Panels" width="90%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
   <br />
   <em>▲ 真实实机截图：多功能增强侧边栏面板、任务管理与工作流面板</em>
 </p>
@@ -75,15 +75,9 @@
 * **📁 资源管理器 (Explorer) 与代码高亮预览**：
   - 工业级树状工程文件浏览、秒级文件名搜索定位；
   - 集成代码语法高亮即时预览（支持 Rust, Go, Python, TypeScript, C++, SQL, YAML, JSON 等 15+ 语言）。
-* **🌿 源代码管理 (Git) 与可视化分支图谱**：
+* **🌿 源代码管理 (Git) 与可视化提交对比**：
   - 实时分支切换与状态追踪；
   - 可视化提交历史记录、工作区变更文件 Diff 差异对比高亮与一键撤销。
-
-<p align="center">
-  <img src="assets/readme/real-ui-git-graph.png" alt="DSH Real Git Graph and Version Control" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
-  <br />
-  <em>▲ 真实实机截图：集成 Git 可视化图谱、提交日志与分支管理</em>
-</p>
 
 ---
 
@@ -92,7 +86,7 @@
 在侧边栏点击「MCP 管理」即可进入。系统提供全自动的多源配置嗅探、10+ 官方热门预设轮播与独立的 **Tool Tester 在线沙箱**：
 
 <p align="center">
-  <img src="assets/readme/real-ui-mcp-plugins.png" alt="DSH Real MCP and Plugins Management UI" width="85%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+  <img src="assets/readme/real-ui-mcp-plugins.png" alt="DSH Real MCP and Plugins Management UI" width="90%" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
   <br />
   <em>▲ 真实实机截图：多源 MCP 与插件可视化管理中枢、一键启停与在线状态检测</em>
 </p>
@@ -107,13 +101,6 @@
 ### 🧠 3. 视觉多模态与深度思考 (CoT) 穿透引擎 (`dsh-tool-describe-image`)
 
 专为带深度思考能力的多模态大模型定制，提供无损的思维链流式穿透与图形化测速：
-
-<p align="center">
-  <img src="assets/readme/real-ui-cot-settings.png" alt="DSH Real CoT Vision Settings and Latency Probe" width="48%" style="border-radius: 8px; vertical-align: top;" />
-  <img src="assets/readme/real-ui-cot-tool-call.png" alt="DSH Real CoT Vision Agent Tool Execution" width="48%" style="border-radius: 8px; vertical-align: top;" />
-  <br />
-  <em>▲ 真实实机截图：左图为 CoT 视觉模型图形化连通性测速与探测设置；右图为 Agent 实机流式调用看图与思考链穿透效果</em>
-</p>
 
 * **思考链 (CoT Reasoning) 智能兼容**：深度适配带深度思考的多模态视觉模型（如 Xiaomi MiMo 等）。即使模型前期流式 `content` 为空，也能无缝解析 `reasoning_content`，输出完整思考推导过程；
 * **图形化连通性测试与模型探测**：支持一键测试接口连通性、测算网络延迟，并自动解析模型厂商导出的完整模型列表。
