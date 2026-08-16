@@ -1,0 +1,22 @@
+# Current Session Snapshot
+
+- **Project**: DeepSeek Harness - Modular Fusion & Native MCP Multi-Source Manager
+- **Phase**: Phase 3/4/5 DEV & QA & OPS Completed
+- **Role**: DEV (全栈工程师) & QA & OPS
+- **Service Status**: Running at `http://127.0.0.1:3080` / `0.0.0.0:3080` (Healthy 200 OK)
+- **Accomplished Highlights**:
+  - 1. **热门预设横向滚轮与全量浏览支持 (COMPLETED & VERIFIED)**:
+    - 移除了预设数量截断，展示全量 10 个精选官方预设（GitHub, SQLite, Web Fetch, Brave Search, Puppeteer, PostgreSQL, Memory, Filesystem, Everything, Git）。
+    - 支持 **鼠标滚轮横向滚动 (onWheel 智能映射)**：鼠标悬停在预设条上任意滚动滚轮即可丝滑左右翻动。
+    - 添加了两侧紧凑型 **【‹】/【›】快捷滚动按键** 与自适应纤细滚动条。
+  - 2. **MCP 多源管理中心 (`dsh-better-sidebar-mcp`)**:
+    - 自动聚合扫描 Workspace (`mcp.json`, `.vscode/mcp.json`, `.cursor/mcp.json`, `.agents/mcp_config.json`) 及全局环境 (Claude Desktop, Cursor, Antigravity/Gemini, `~/.dsh/mcp.json`)。
+    - 纯矢量 SVG 统一图标规范（DSH Outline 风格，无 Emoji 占位）。
+    - 单工具在线执行沙箱（Tool Tester Modal），入参 Schema 可视化与毫秒级延迟测速。
+    - 批量 JSON 导入与原子化保存/删除/启用禁用切换。
+  - 3. **自动化测试与端到端验证**:
+    - Vitest 10/10 单元测试全绿通过。
+    - 浏览器实机验证与滚轮测试完成。
+- **Deliverables**:
+  - 📋 [docs/PRD_MCP_MANAGER.md](file:///e:/ccode/vscode_code/个人项目/deepseek-harness-master/docs/PRD_MCP_MANAGER.md)
+  - 📦 [dsh-better-sidebar-mcp](file:///e:/ccode/vscode_code/个人项目/deepseek-harness-master/dsh-better-sidebar-mcp)

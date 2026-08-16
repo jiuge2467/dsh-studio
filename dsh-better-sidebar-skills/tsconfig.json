@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": ["node"],
+    "typeRoots": [
+      "../node_modules/@types",
+      "../DSH-better-sidebar/node_modules/@types",
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "react": ["../DSH-better-sidebar/node_modules/@types/react"],
+      "react/jsx-runtime": ["../DSH-better-sidebar/node_modules/@types/react/jsx-runtime"],
+      "cordis": ["../DSH-better-sidebar/node_modules/cordis/lib/index.d.ts"],
+      "dsh-better-sidebar": ["../DSH-better-sidebar/lib/types/index.d.ts"]
+    }
+  },
+  "include": ["src", "tests", "tsdown.config.ts", "vitest.config.ts"]
+}

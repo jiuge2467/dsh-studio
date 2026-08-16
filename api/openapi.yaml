@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: DSH Agent Skills & Rules Workbench API
+  description: Host API for discovering, reading, creating, and toggling AI Agent skills in DeepSeek Harness.
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:3080/sidebar/api
+    description: DSH Local WebServer Sidebar Endpoint
+
+paths:
+  /skills.list:
+    post:
+      summary: List all discovered agent skills and rules
+      operationId: listSkills
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sessionId
+              properties:
+                sessionId:
+                  type: string
+                  description: Active DSH session ID
+                cwd:
+                  type: string
+                  description: Optional workspace CWD override
+                includeGlobal:
+                  type: boolean
+                  default: true
+                  description: Whether to scan global home directories (~/.gemini, ~/.claude)
+      responses:
+        '200':
+          description: List of discovered skills
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ok
+                  - value
+                properties:
+                  ok:
+                    type: boolean
+                  value:
+                    type: object
+                    required:
+                      - skills
+                      - total
+                    properties:
+                      skills:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/AgentSkill'
+                      total:
+                        type: integer
+                      stats:
+                        type: object
+                        additionalProperties:
+                          type: integer
+
+  /skills.create:
+    post:
+      summary: Create a new agent skill scaffold
+      operationId: createSkill
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sessionId
+                - name
+                - source
+              properties:
+                sessionId:
+                  type: string
+                name:
+                  type: string
+                  example: my-awesome-skill
+                source:
+                  type: string
+                  enum: [antigravity, claude, codex, cursor]
+                description:
+                  type: string
+                prompt:
+                  type: string
+                scope:
+                  type: string
+                  enum: [workspace, global]
+                  default: workspace
+      responses:
+        '200':
+          description: Skill created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ok
+                  - value
+                properties:
+                  ok:
+                    type: boolean
+                  value:
+                    type: object
+                    required:
+                      - filePath
+                      - skill
+                    properties:
+                      filePath:
+                        type: string
+                      skill:
+                        $ref: '#/components/schemas/AgentSkill'
+
+  /skills.toggle:
+    post:
+      summary: Toggle skill enabled or disabled state
+      operationId: toggleSkill
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - sessionId
+                - skillId
+                - disabled
+              properties:
+                sessionId:
+                  type: string
+                skillId:
+                  type: string
+                disabled:
+                  type: boolean
+      responses:
+        '200':
+          description: State toggled
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ok
+                  - value
+                properties:
+                  ok:
+                    type: boolean
+                  value:
+                    type: object
+                    properties:
+                      skillId:
+                        type: string
+                      disabled:
+                        type: boolean
+                      newPath:
+                        type: string
+
+components:
+  schemas:
+    AgentSkill:
+      type: object
+      required:
+        - id
+        - name
+        - source
+        - scope
+        - filePath
+        - disabled
+      properties:
+        id:
+          type: string
+          example: agy:case-radar
+        name:
+          type: string
+          example: case-radar
+        description:
+          type: string
+          example: 案例雷达：扫描生态寻找真实案例
+        source:
+          type: string
+          enum: [antigravity, claude, codex, cursor, custom]
+        scope:
+          type: string
+          enum: [workspace, global]
+        filePath:
+          type: string
+          example: .agents/skills/case-radar/SKILL.md
+        dirPath:
+          type: string
+          example: .agents/skills/case-radar
+        disabled:
+          type: boolean
+        metadata:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: string
+            parameters:
+              type: object
+              additionalProperties:
+                type: string
+            icon:
+              type: string
+            author:
+              type: string
+            version:
+              type: string
+        content:
+          type: string
+          description: Markdown body content without frontmatter
